@@ -1,0 +1,449 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/site.webmanifest' %}">
+    <title>Our Services | Meaningful Mind Therapeutic Services</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}?v=8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <style>
+        .hidden {
+          display: none;
+        }
+        .transition-height {
+      transition: height 0.3s ease;
+      overflow: hidden;
+    }
+
+    .playwrite-cu-uniquifier {
+  font-family: "Playwrite CU", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.title-banner h1 {
+  font-family: "Berkshire Swash", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+      </style>
+</head>
+
+<body class="bg-white">
+    
+<!-- NavBar -->
+    <header>
+        <nav class="bg-white py-5">
+            <div class="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
+              <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center">
+                  <!-- Logo -->
+                  <a class="navbar-brand" href="#"><img src="{% static 'images/mm logo.jpg' %}" alt="Logo" class="w-auto"></a>
+                </div>
+                <div class="flex flex-1 items-center justify-center md:items-stretch sm:justify-start">
+                  <div class="flex flex-shrink-0 items-center">
+                  </div>
+                  <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex space-x-4">
+                      <a href="{% url 'Onboarding:home' %}" class="rounded-md px-3 py-2  text-sm uppercase font-medium" aria-current="page">HOME</a>
+                      <a href="{% url 'Onboarding:about' %}" class="rounded-md px-3 py-2 text-sm uppercase font-medium">About US</a>
+                      <a href="{% url 'Onboarding:services' %}" class=" px-3 py-2 text-sm uppercase font-medium active ">Our services</a>
+                      <a href="{% url 'Onboarding:contacts' %}" class=" px-3 py-2 text-sm uppercase font-medium">Contact us</a>
+                      <a target="_blank" class="px-3 py-2 text-sm uppercase font-medium" href="https://forms.gle/SYngRR6FtZ67UbB78">Career</a>
+                      <a target="_blank" class="px-3 py-2 text-sm uppercase font-medium" href="https://forms.gle/5WsGnkkdFrFPkRaF6">Referral</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
+                  <!-- Mobile menu button-->
+                  <button type="button" class="relative toggle inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMenu()">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="hidden transition-height lg:hidden" id="mobile-menu">
+              <div class="space-y-1 px-2 pb-3 pt-2">
+                <a href="{% url 'Onboarding:home' %}" class="block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
+                <a href="{% url 'Onboarding:about' %}" class=" block rounded-md px-3 py-2 text-base font-medium">About Us</a>
+                <a href="{% url 'Onboarding:services' %}" class=" active block rounded-md px-3 py-2 text-base font-medium">Our Services</a>
+                <a href="{% url 'Onboarding:contacts' %}" class=" block rounded-md px-3 py-2 text-base font-medium">Contact Us</a>
+                <a target="_blank" class=" block rounded-md px-3 py-2 text-base font-medium" href="https://forms.gle/SYngRR6FtZ67UbB78">Career</a>
+                <a target="_blank" class=" block rounded-md px-3 py-2 text-base font-medium" href="https://forms.gle/5WsGnkkdFrFPkRaF6">Referral</a>
+              </div>
+            </div>
+          </nav>
+          
+          <script>
+            function toggleMenu() {
+              const menu = document.getElementById('mobile-menu');
+              if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.style.height = menu.scrollHeight + 'px';
+              } else {
+                menu.style.height = '0';
+                menu.addEventListener('transitionend', () => {
+                  menu.classList.add('hidden');
+                }, { once: true });
+              }
+            }
+          
+            function toggleUserMenu() {
+              const menu = document.getElementById('user-menu');
+              menu.classList.toggle('hidden');
+            }
+          </script>
+          
+          
+        
+      
+  
+      <div class="header bg-white">
+        <div class="logo">
+          <a class="navbar-brand" href="#"><img src="{% static 'images/mm logo.jpg' %}" alt=""></a>
+          
+        </div>
+        <div class="mail">
+          <a class= "mail-info" href=""><img src="{% static 'images/icons8-email-48.png' %}" style="padding-bottom: 17px;" alt=""> 
+          </a> 
+          <h3>EMAIL ADDRESS<br><a href="mailto:meaningfulmindsllc@gmail.com">meaningfulmindsllc@gmail.com</a></h3>
+          <a class= "Call-info" href=""><img src="{% static 'images/icons8-phone-48.png' %}" style="padding-bottom: 7px;" alt=""></a>
+          <h3>TELEPHONE<br><a href="{% url 'Onboarding:home' %}">410-449-3988
+
+          </a></h3>
+        </div>
+      </div>
+    </header>
+
+    <main>
+        <!-- Welcome Banner -->
+        <section id="welcome-banner" data-aos="fade-up"  data-aos-once="true">
+          <div class="background-image">
+            <img src="{% static 'images/people-meeting-support-group.jpg' %}" alt="" class="background">
+            <img src="{% static 'images/47250.jpg'%}" alt="" class="background">
+            <img src="{% static 'images/woman-therapy-session-attentive-psychologist-attentive-psychologist-holding-pencil-her-hands-making-written-notes-while-listening-her-client.jpg' %}" alt="" class="background">
+          </div>
+          <h1 class="font-mono sm:text-5xl text-3xl font-extrabold text-left">OUR <span class="text-blue-400">SERVICES</span></h1>
+         <h3 class="font-bold font-mono text-white pl-[90px] text-2xl sm:text-4xl uppercase">Home | Our Services</h3>
+        </section>
+        <!-- End of Welcome Banner -->
+
+        <section id="services" class=" py-5">
+        <div class="features container mx-auto justify-center mt:4 lg:mt-8">
+           <!-- title banner -->
+        <div data-aos="fade-up"  data-aos-once="true" class="title-banner">
+          <!-- <h1 class="lg:text-4xl font-bold md:text-3xl text-3xl text-center text-blue-500 capitalize">What We <span class="text-blue-500">do here</span></h1> -->
+          <div class="mx-auto max-w-2xl lg:text-center lg:pl-[0px] pl-5 lg:pr-[0px] pr-2 md:mb-8 " >
+          
+            <h1 class="mt-2 text-3xl font-bold tracking-tight  text-blue-500 sm:text-4xl">What We Do Here</h1>
+    
+          </div>
+         </div>
+            <div class="features-items pt-5 container mx-auto">
+              <div data-aos="fade-up"  data-aos-once="true" class="feature-item  md:pt-0  px-10 md:px-16 lg:px-28 flex text-left bg-green-700 md:flex-row flex-col justify-center items-center py-10 align-middle">
+                <div class="feature-item-text text-left sm:mr-[10px]   md:w-[750px]">
+                  <h1 class=" text-green-500 mb-1 font-bold lg:text-3xl md:text-2xl text-2xl">
+                    Partial Hospitalization Program (PHP)-Level II</h1>
+                  <p class="text-white   text-[15px] md:text-[15px] lg:text-[18px] ">
+                    This is an orientation and stabilization phase for clients starting ‘Substance Use
+                    Disorder’ care at Meaningful Minds. Clients receive education and information regarding
+                    symptoms, effects, and treatment of mental illness, medications, substance abuse, co-
+                    dependency and its effect on substance abuse treatment, the implementation of self-
+                    care. Services provide individual and group substance abuse counseling, education on
+                    the health consequences of substance abuse and dependence, and relapse prevention.
+                    PHP’s typically run approximately 6 hours a day, five days a week.
+                  </p>
+                </div>
+                <div class="feature-item-img mt-8">
+                    <img class="w-[500px] mt-8 rounded-[20px]" src="{% static 'images/IMG-20240919-WA0029.jpg' %}" alt="">
+                </div>
+              </div>
+              <div data-aos="fade-up"  data-aos-once="true" class="feature-item  md:pt-0  px-10 md:px-16 lg:px-28 flex md:flex-row-reverse flex-col justify-center items-center align-middle mt-12">
+                <div class="feature-item-text text-left  sm:ml-[20px]  md:w-[750px]">
+                  <h1 class=" text-green-500 mb-1  font-bold lg:text-3xl md:text-2xl text-2xl">
+                    Intensive Outpatient (IOP)-Level 2.1</h1>
+                  <p class="text-gray-500 pb-5 text-[15px]  md:text-[15px] lg:text-[18px] ">
+                    Our Intensive Outpatient Program (also known as IOP) is designed to provide you with
+the support you need as you begin steps towards independence. Whether you are
+stepping down from your treatment or entering IOP as your initial step, our team will
+create an individualized plan based around your needs during early recovery. IOP’s
+typically run approximately 3-6 hours each day for one to three days a week.
+                  </p>
+                </div>
+                <div class="feature-item-img">
+                    <img class="w-[500px] rounded-[20px]" src="{% static 'images/IMG-20240919-WA0037.jpg'%}" alt="">
+                </div>
+              </div>
+              <div data-aos="fade-up"  data-aos-once="true" class="feature-item    px-10 md:px-16 lg:px-28 flex md:flex-row flex-col justify-center items-center align-middle mt-8 py-[72px] bg-green-700">
+                <div class="feature-item-text text-left sm:mr-[10px]   md:w-[750px]">
+                  <h1 class="pb-1 text-green-500 font-bold lg:text-3xl md:text-2xl text-2xl">
+                    Outpatient Program (OP)-Level I
+                  
+                  </h1>
+                  <p class="text-white   text-[15px] md:text-[15px] lg:text-[18px] ">Outpatient therapy (also known as OP) is the least intensive program we offer. The
+                    outpatient treatment program provides regularly scheduled individual and group
+                    counseling. The program includes education on mental health issues, recovery and
+                    wellness. These comprehensive, coordinated, and defined services vary in the level of
+                    intensity dependent on the individual needs of the client seeking services. The
+                    outpatient program addresses a variety of needs, including, but not limited to, situational
+                    stressors, family relations, interpersonal relations, mental health issues, life span
+                    issues, psychiatric illnesses, addictions, and other traumas. OP’s typically run 3-4 hours
+                    a day, one to three days a week.
+                   <br>
+                  
+                  </p>
+                </div>
+                <div class="feature-item-img">
+                    <img class="w-[500px] mt-8 rounded-[20px]" src="{% static 'images/IMG-20240919-WA0032.jpg' %}" alt="">
+                </div>
+              </div>
+              <div class="mx-auto container md:pt-0  px-10 md:px-16 lg:px-28 mt-12 text- text-gray-500 text-[15px] md:text-xl">
+              <b class="md:text-2xl text-[20px]  text-green-950">All programs (Partial Hospitalization Program (PHP)-Level II , Intensive Outpatient (IOP)-Level 2.1 and Intensive Outpatient (IOP)-Level 2.1) includes:</b>
+                
+               <li>Substance Use assessment, evaluation, and consultation</li>
+               <li> Group and individual counseling</li>
+                <li>Medication monitoring and education</li>
+               <li> Drug Testing and Reporting</li>
+               <li> Discharge planning</li>
+                <li>Light snacks and lunch</li>
+               <li>Transportation to and from the program</li>
+              </div>
+              <div data-aos="fade-up"  data-aos-once="true" class="feature-item  md:pt-0  px-10 md:px-16 lg:px-28 flex md:flex-row-reverse flex-col justify-center items-center align-middle mt-12 pb-10">
+                <div class="feature-item-text text-left  sm:ml-[20px]  md:w-[750px]">
+                  <h1 class=" text-green-500 mb-1  font-bold lg:text-3xl md:text-2xl text-2xl">
+                    
+                    Psychiatric Rehabilitation Program-Adults</h1>
+                  <p class="text-gray-500 pb-5 text-[15px]  md:text-[15px] lg:text-[18px]">Psychiatric rehabilitation for adults is a comprehensive approach to helping individuals
+                    with mental illness to achieve their goals and lead fulfilling lives. The aim of psychiatric
+                    rehabilitation is to help individuals with mental illness to develop skills and strategies for
+                    managing their symptoms, improving their quality of life, and achieving their personal
+                    goals.
+                    Psychiatric rehabilitation programs typically involve a range of services, including, social
+                    support, vocational training, resource linkage, skill building, and educational programs.
+                    The focus is on helping individuals to build a support system, develop coping strategies,
+                    and learn new skills that will enable them to function more effectively in their daily lives.
+                    <br>
+                    <b>Individual &amp; Group Rehabilitation Activities are designed to reduce functional behavioral
+                      impairments and develop and/or restore skills in a variety of areas, including:</b>
+                   <div class="text-gray-500">
+                    <li>Self-Care Skills</li>
+                    <li>Independent Living Skills</li>
+                    <li> Social/Interactive Skills</li>
+                    <li>Anger Management Skills</li>
+                    <li>Employment goals</li>
+                    <li> Symptom Management</li>
+                    <li>Accessing Community Resources</li>
+                    <li>Personal Safety</li>
+                    <li>Maintaining Boundaries</li>
+                    <br>
+                    <b>Time Management
+                      To meet Eligibility Requirements A Child Must Be:</b>
+                    <li>18 or older</li>
+                    <li>Actively participating in mental health treatment</li>
+                    <li>Referred by a Licensed Mental Health Professional</li>
+                    <li>Diagnosed with a qualified behavioral health diagnosis</li>
+                    <li>Willing to participate in Psychiatric Rehabilitation Program services</li>
+                    <li>A Medical Assistance recipient</li>
+                   </div>
+                  
+                  </p>
+                </div>
+                <div class="feature-item-img">
+                    <img class="w-[500px] rounded-[20px]" src="{% static 'images/IMG-20240919-WA0135.jpg' %}" alt="">
+                </div>
+              </div>
+              <div data-aos="fade-up"  data-aos-once="true" class="feature-item    px-10 md:px-16 lg:px-28 flex md:flex-row flex-col justify-center items-center align-middle mt-8 py-[72px] bg-green-700">
+                <div class="feature-item-text text-left sm:mr-[10px]   md:w-[750px]">
+                  <h1 class="pb-1 text-green-500 font-bold lg:text-3xl md:text-2xl text-2xl">
+                    Psychiatric Rehabilitation Program-Minors
+                  
+                  </h1>
+                  <p class="text-white   text-[15px] md:text-[15px] lg:text-[18px] ">
+                    Psychiatric Rehabilitation Program for Children and Adolescents are designed to
+complement, support and strengthen the mental health (Therapy and Psychiatry)
+services the child is already receiving. Trained rehabilitation staff provide a combination
+of individual and group rehabilitation activities at the child’s home and/or other
+appropriate community locations.
+On Site (facility-based) and Off Site (community-based) services are family focused,
+individualized and based on the child’s and the family’s strengths and resilience.
+Specific rehabilitation goals are established, which target identified needs based on
+information from the referring mental health professional, a comprehensive assessment
+and meetings with the child and his/her family.
+PRP staff routinely evaluate progress with each child and their parent/guardian/support
+team and provide monthly summary reports to the primary therapist and other mental
+health professionals working with the child.
+<br>
+<b>Individual &amp; Group Rehabilitation Activities are designed to reduce functional behavioral
+  impairments and develop and/or restore age-appropriate skills in a variety of areas,
+  including:</b>
+              
+<div class="text-white">
+  
+ <li>Self Care Skills</li>
+ <li> Semi-Independent Living Skills</li>
+  <li>Social/Interactive Skills</li>
+ <li>Anger Management Skills</li>
+ <li>Symptom Management</li>
+  <li>Accessing Community Resources</li>
+ <li>Personal Safety</li>
+ <li>Maintaining Age-Appropriate Boundaries</li>
+ <li>Time Management</li>
+ <br>
+ <b>To meet Eligibility Requirements A Child Must Be:</b>
+
+<li>5 – 17 years old</li>
+<li>Actively participating in mental health treatment</li>
+<li>Referred by a Licensed Mental Health Professional</li>
+<li>Diagnosed with a behavioral health diagnosis</li>
+<li>Willing to participate in Psychiatric Rehabilitation Program services</li>
+<li>A Medical Assistance recipient</li>
+</div>
+                  </p>
+                </div>
+                <div class="feature-item-img">
+                    <img class="w-[500px] mt-8 rounded-[20px]" src="{% static 'images/IMG-20240919-WA0028.jpg' %}" alt="">
+                </div>
+              </div>
+              <div data-aos="fade-up"  data-aos-once="true" class="feature-item  md:pt-0  px-10 md:px-16 lg:px-28 flex md:flex-row-reverse flex-col justify-center items-center align-middle mt-12 pb-10">
+                <div class="feature-item-text text-left  sm:ml-[20px]  md:w-[750px]">
+                  <h1 class=" text-green-500 mb-1  font-bold lg:text-3xl md:text-2xl text-2xl">
+                    Medication Management</h1>
+                  <p class="text-gray-500 pb-5 text-[15px]  md:text-[15px] lg:text-[18px]">
+                    For many clients with mental health or co-occurring disorders, medication management
+may be a necessary tool for continuity of care.
+<br>
+<b>Clients in this program work with a licensed medical professional that can help:</b>
+                  
+                   <div class="text-gray-500">
+                    <li>Initiate medications for new clients</li>
+                    <li>Provide continuation of ongoing medications</li>
+                    <li> Ensure clients are following their medication regimen</li>
+                    <li>Monitor dosage and efficacy of medications</li>
+                    <li>Develop an individualized plan of care in conjunction with clients and other
+                      behavioral health professionals</li>
+                    <br>
+                    More importantly, our medication management services help individuals improve their quality
+of life. To learn more about medication management or other treatment programs,
+please contact Meaningful Minds Therapeutic Services today.
+                   </div>
+                  
+                  </p>
+                </div>
+                <div class="feature-item-img">
+                    <img class="w-[500px] rounded-[20px]" src="{% static 'images/IMG-20240903-WA0044.jpg' %}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+        
+            
+        <!-- End of About Section -->
+
+       
+      <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<!-- 
+X - https://x.com/meaningful45835
+instagram - https://www.instagram.com/meaningfulmindsllc/
+Facebook - https://web.facebook.com/profile.php?id=100089789233240
+ -->
+      
+<footer class="bg-blue-950 text-gray-600 body-font" data-aos="zoom-in"  data-aos-once="true">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a href="{% url 'Onboarding:home' %}" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <img  class="rounded-[20px] w-[250px]" src="{% static 'images/mm logo.jpg' %}">
+    </a>
+    <p class="text-sm text-gray-200 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 flex flex-col justify-center align-items"> 
+
+      <h1 class="text-white pr-3 md:text-left text-center"> 606 Edmondson Ave Suite 200
+        <br>
+        <a href="mailto:meaningfulmindsllc@gmail.com">meaningfulmindsllc@gmail.com</a>
+        <br>
+        <a href="{% url 'Onboarding:home' %}">410-449-3988</a></h1>
+      
+      <br>
+      <img class=" mt-2 w-[80px] rounded-lg items-center align-middle justify-center " src="{% static 'images/IMG-20240903-WA0036(1).jpg' %}" alt="">
+    
+    </p>
+    
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center flex-col sm:justify-start">
+      <a href="mailto:meaningfulmindsllc@gmail.com" class="mt-2 mb-2 text-sm text-gray-200">meaningfulmindsllc</a>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a target="_blank" href="https://web.facebook.com/profile.php?id=100089789233240" class="text-gray-500 cursor-pointer">  
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a target="_blank" href="https://x.com/meaningful45835" class="ml-3 cursor-pointer text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a target="_blank"  href="https://www.instagram.com/meaningfulmindsllc/" class="ml-3 cursor-pointer text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+      </span>
+    </span>
+  </div>
+  <p class=" text-gray-400 p-2">
+   
+    <img src="{% static 'images/mmm partners logos.jpg' %}" alt="">
+  </p>
+</footer>
+      
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 2000,
+    once: true,
+  });
+</script>
+
+    <script src="{% static 'js/app.js' %}?v=1"></script>
+</body>
+</html>

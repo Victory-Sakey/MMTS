@@ -1,0 +1,539 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/site.webmanifest' %}">
+    <title>Meaningful Mind Therapeutic Services</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=12">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+<!-- Increase welcome text -->
+
+    <style>
+        .hidden {
+          display: none;
+        }
+        .transition-height {
+      transition: height 0.3s ease;
+      overflow: hidden;
+    }
+
+.faq-text p {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.faq-text p.show {
+  max-height: 1000px; /* Adjust according to the content */
+  transition: max-height 0.5s ease-in;
+}
+/* 
+
+ {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+ */
+.berkshire-swash-regular , #welcome-banner h1 , #About .about .about-1 h1 , p.rates {
+  font-family: "Berkshire Swash", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+      </style>
+</head>
+<body class="font-sans">
+    
+<!-- NavBar -->
+    <header>
+        <nav class="bg-white py-5">
+            <div class="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
+              <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center">
+                  <!-- Logo -->
+                  <a class="navbar-brand" href="#"><img src="{% static 'images/mm logo.jpg' %}" alt="Logo" class="w-auto"></a>
+                </div>
+                <div class="flex flex-1 items-center justify-center md:items-stretch sm:justify-start">
+                  <div class="flex flex-shrink-0 items-center">
+                  </div>
+                  <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex space-x-4">
+                      <a href="{% url 'Onboarding:home' %}" class="rounded-md px-3 py-2 active text-sm uppercase font-medium" aria-current="page">HOME</a>
+                      <a href="{% url 'Onboarding:about' %}" class="rounded-md px-3 py-2 text-sm uppercase font-medium">About US</a>
+                      <a href="{% url 'Onboarding:services' %}" class=" px-3 py-2 text-sm uppercase font-medium">Our services</a>
+                      <a href="{% url 'Onboarding:contacts' %}" class=" px-3 py-2 text-sm uppercase font-medium">Contact us</a>
+                      <a target="_blank" class="px-3 py-2 text-sm uppercase font-medium" href="https://forms.gle/SYngRR6FtZ67UbB78">Career</a>
+                <a target="_blank" class="px-3 py-2 text-sm uppercase font-medium" href="https://forms.gle/5WsGnkkdFrFPkRaF6">Referral</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
+                  <!-- Mobile menu button-->
+                  <button type="button" class="relative toggle inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMenu()">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="hidden transition-height lg:hidden" id="mobile-menu">
+              <div class="space-y-1 px-2 pb-3 pt-2">
+                <a href="{% url 'Onboarding:home' %}" class="active block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
+                <a href="{% url 'Onboarding:about' %}" class=" block rounded-md px-3 py-2 text-base font-medium">About Us</a>
+                <a href="{% url 'Onboarding:services' %}" class=" block rounded-md px-3 py-2 text-base font-medium">Our Services</a>
+                <a href="{% url 'Onboarding:contacts' %}" class=" block rounded-md px-3 py-2 text-base font-medium">Contact Us</a>
+                <a target="_blank" class=" block rounded-md px-3 py-2 text-base font-medium" href="https://forms.gle/SYngRR6FtZ67UbB78">Career</a>
+                <a target="_blank" class=" block rounded-md px-3 py-2 text-base font-medium" href="https://forms.gle/5WsGnkkdFrFPkRaF6">Referral</a>
+              </div>
+            </div>
+          </nav>
+          
+          <script>
+            function toggleMenu() {
+              const menu = document.getElementById('mobile-menu');
+              if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.style.height = menu.scrollHeight + 'px';
+              } else {
+                menu.style.height = '0';
+                menu.addEventListener('transitionend', () => {
+                  menu.classList.add('hidden');
+                }, { once: true });
+              }
+            }
+          
+            function toggleUserMenu() {
+              const menu = document.getElementById('user-menu');
+              menu.classList.toggle('hidden');
+            }
+          </script>
+          
+          
+        
+      
+  
+      <div class="header">
+        <div class="logo">
+          <a class="navbar-brand" href="#"><img src="{% static 'images/mm logo.jpg' %}" alt=""></a>
+          
+        </div>
+        <div class="mail">
+          <a class= "mail-info" href=""><img src="{% static 'images/icons8-email-48.png' %}" style="padding-bottom: 17px;" alt=""> 
+          </a> 
+         
+          <h3>EMAIL ADDRESS<br><a href="mailto:meaningfulmindsllc@gmail.com">meaningfulmindsllc@gmail.com</a></h3>
+          <a class= "Call-info" href=""><img src="{% static 'images/icons8-phone-48.png' %}" style="padding-bottom: 7px;" alt=""></a>
+          <h3>TELEPHONE<br><a href="{% url 'Onboarding:home' %}">410-449-3988
+
+          </a></h3>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Starts Here -->
+    <main>
+        <!-- Welcome Banner -->
+        <section id="welcome-banner" >
+          <div class="background-image">
+            <img src="{% static 'images/people-meeting-support-group.jpg' %}" alt="" class="background">
+            <img src="{% static 'images/47250.jpg'%}" alt="" class="background">
+            <img src="{% static 'images/woman-therapy-session-attentive-psychologist-attentive-psychologist-holding-pencil-her-hands-making-written-notes-while-listening-her-client.jpg' %}" alt="" class="background">
+          </div>
+          <h1  class="sm:text-5xl text-3xl  font-bold">"From Healing to <span class="text-blue-400 font-bold">Wholeness</span>"</h1>
+          <a href="{% url 'Onboarding:about' %}"><button>Get Started</button></a>
+        </section>
+        <!-- End of Welcome Banner -->
+
+        <!-- About Section -->
+        <section id="About">
+            <div class="about mx-auto container flex  flex-col md:justify-center lg:justify-evenly  p-5 lg:p-2 xl:p-20">
+                <div class="about-1 p-5 tetx-center justify-center align-middle items-center flex flex-col" data-aos="fade-up"  data-aos-once="true">
+                    <h1  class="text-blue-500 text-5xl text-center  pb-3 font-bold ">Welcome!</h1>
+                    <P class="text-gray-950   text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-sans w-[100%] font-bold uppercase text-center" style="letter-spacing: .1rem; word-spacing: .1rem;" > Even the strongest people need a little bit of help to work through some of 
+                        life’s most challenging problems. Everyone has hurdles to overcome, and we’d 
+                        love to help you along the way.
+                        </P>
+                    <a href="{% url 'Onboarding:services' %}"><button class="bg-blue-500 p-4 mt-8 w-[200px] text-white text-2xs font-sans uppercase font-bold  cursor-pointer">Our Services</button></a>
+                </div>
+                <div class="about-2 align_middle items-center justify-center   p-5 " data-aos="fade-up"  data-aos-once="true">
+                   <p class="text-gray-500 font-sans  text-[18px] w-[100%] text-center">
+                        <b class="text-5xl">H</b>ere at Meaningful Minds Therapeutic Services, LLC, we realize that no two 
+                        people are the same, and we tailor our services to meet specific needs for 
+                        individuals, family or groups. We love helping people understand the things 
+                        that are holding them back and/or down with an in-depth approach. After 
+                        recognizing underlying factors, clients can fully realize their strengths and 
+                        adjust certain behaviors and thoughts to see things in a different, healthier 
+                        way.
+                    </p> 
+                    
+                      
+                </div>
+            </div>
+        </section>
+        <!-- End of About Section -->
+
+        <section id="About">
+          <h1 data-aos="fade-up"  data-aos-once="true" class="text-xl  lg:text-2xl uppercase  text-center text-gray-950 font-bold">Don't wait to get the help you need</h1>
+        <div class="about mx-auto container flex lg:flex-row flex-col-reverse md:justify-center lg:justify-center  p-5 lg:p-2 xl:p-20">
+            <div class="about-1 p-5" data-aos="fade-up"  data-aos-once="true">
+                <!-- <h1 class="text-red-500 text-xl  pb-3 font-extrabold ">Welcome!</h1> -->
+            <img class="w-[5500px]" src="{% static 'images/IMG-20240919-WA0033.jpg' %}" alt="">
+            </div>
+            <div class="about-2  p-5 pb-4" data-aos="fade-up"  data-aos-once="true">
+                <p class="text-gray-600 font-sans  text-[18px] w-full lg:w-[100%] text-left">
+                 <b class="text-5xl">O</b>ur practice specializes in helping people who are struggling with addiction, social and life skills, or behavior management. If you are trying to navigate these areas of life, we’re confident that we have the experience to help you rediscover what brings happiness to your life. Through therapy, there is always a way to address the issues you face and learn coping strategies to help you both right now and in the future.
+
+      Through therapy, we can get you on track to leading a happier, more fulfilling life by equipping you with the tools you need to more efficiently and confidently manage life’s challenges.
+                        
+      It is never too late to start living the life you’ve always wanted.
+
+      If you’re interested in becoming a better, happier, more fulfilled you,
+      get started by reaching out today!
+                </p>
+                <div class="buttons mt-5  justify-evenly lg:justify-evenly flex md:flex-row flex-col">
+                  <div class="button-1 p-5 items-center mr-3  flex mb-5 lg:mb-0 " style="border: 2px solid rgb(240, 236, 236); border-radius: 2px;">
+                      <img src="{% static 'images/icons8-compassion-50 (2).png' %}" alt="">
+                      <h1 class="pl-5 lg:pl-2  w-full uppercase font-bold">Always put desire above fear</h1>
+                  </div>
+                  <div class="button-2 flex  p-5 items-center" style="border: 2px solid rgb(240, 236, 236); border-radius: 2px;">
+                      <img src="{% static 'images/icons8-speech-bubble-50.png' %}" alt="">
+                      <h1 class="pl-5 lg:pl-2 w-full uppercase font-bold">Compassionate & Professional</h1>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+    </section>
+
+         <!-- Stats Section
+         <div class="stats relative isolate overflow-hidden py-24 sm:py-32">
+          <img src="{% static 'images/authentic-scene-young-person-undergoing-psychological-therapy.jpg' %}" alt="" class="absolute fixed inset-0 z-0 h-full w-full object-cover object-right md:object-center">
+          <div class="absolute inset-0 z-10 bg-blue-950 opacity-60"></div>
+          <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 z-20 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
+              <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-green-500 to-blue-400 opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+          </div>
+          <div class="absolute -top-52 left-1/2 z-20 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
+              <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-green-500 to-blue-400 opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+          </div>
+          <div class="relative z-30 mx-auto max-w-7xl px-6 lg:px-8">
+              <div class="mx-auto max-w-2xl lg:mx-0" data-aos="fade-up"  data-aos-once="true">
+                  <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl z-50">WE <span class="text-blue-400">CARE</span></h2>
+                  <p class="mt-6 text-lg leading-8 text-gray-300 z-50">Our practice specializes in helping people who are struggling with addiction, social and life skills, or behavior management. If you are trying to navigate these areas of life, we’re confident that we have the experience to help you rediscover what brings happiness to your life. Through therapy, there is always a way to address the issues you face and learn coping strategies to help you both right now and in the future.
+
+                    Through therapy, we can get you on track to leading a happier, more fulfilling life by equipping you with the tools you need to more efficiently and confidently manage life’s challenges.
+                    
+                    It is never too late to start living the life you’ve always wanted.
+                    
+                    If you’re interested in becoming a better, happier, more fulfilled you,
+                    get started by reaching out today!
+                    </p>
+              </div>
+              <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none z-50">
+                  <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10" data-aos="fade-up"  data-aos-once="true">
+                      <a href="#">Psychiatric Rehabilitation  Programme <br> (PRP) <span aria-hidden="true">&rarr;</span></a>
+                      <a href="#">Partial Hospitalisation  Programme <br> (PHP) <span aria-hidden="true">&rarr;</span></a>
+                      <a href="#">Intensive Out Patient  Programme <br> (IOP) <span aria-hidden="true">&rarr;</span></a>
+                      <a href="#">Out Patient Programme <br> (OP) <span aria-hidden="true">&rarr;</span></a>
+                     
+                  </div>
+                
+              </div>
+          </div>
+      </div> -->
+
+      
+<div class="overflow-hidden bg-white py-20 sm:pt-24 pb-20">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+      <div class="lg:pr-8 lg:pt-4">
+        <div class="lg:max-w-lg">
+          <!-- <h2 data-aos="fade-up"  data-aos-once="true" class="text-base font-semibold leading-7 text-green-600">Affordable Therapy</h2> -->
+          <p data-aos="fade-up"  data-aos-once="true" class="rates mt-2 text-3xl font-bold tracking-tight text-blue-500 sm:text-4xl">Rates & Insurance</p>
+          <p class="mt-6 text-lg leading-8 text-gray-600" data-aos="fade-up"  data-aos-once="true" >
+            <!-- $_____ per ______ minute session. -->
+           Medicaid / Medical Assistance
+           <br>
+           Rates: Sliding scale offered 
+          </p>
+          <dl data-aos="fade-up"  data-aos-once="true" class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+           
+            <div class="relative">
+              <dt class="inline font-semibold text-green-900">
+                
+                Any Other Questions? 
+
+
+              </dt>
+              <dd class="inline">
+                Please contact us for any additional questions you may have. we look forward to hearing from you!
+                
+              </dd>
+            
+
+            </div>
+            <a href="{% url 'Onboarding:contacts' %}"><button class="bg-blue-500 p-4 mt-8 w-[200px] text-white text-2xs font-sans uppercase font-bold  hover:bg-green-900 cursor-pointer">Contact Us</button></a>
+          </dl>
+        </div>
+      </div>
+      <div data-aos="fade-up"  data-aos-once="true" class="">
+        <img src="{% static 'images/2148363603.jpg' %}" alt="Product screenshot" class="w-[28rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[37rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      
+<section id="faq" class="">
+  <div class="faq container px-10  md:px-10 mx-auto pb-10">
+    <h1 data-aos="fade-up"  data-aos-once="true" class="text-4xl  text-blue-500 font-bold pb-10">Frequently asked questions</h1>
+    <div class="faq-items mx-auto container ">
+      <div data-aos="fade-up"  data-aos-once="true"  class="faq-item  mx-auto container ">
+        <div class="faq-text py-3" style=" border-top: 1px solid lightgreen;">
+          <h1  class="text-[15px] md:text-[20px] text flex items-center align-middle justify-between text-blue-400 font-bold pb-1">How do I know I need treatment?
+            <div class="faq-symbol text-2xl font-bold text-blue-500 cursor-pointer">
+              &plus;
+            </div>
+          </h1>
+          <p class="text-gray-500  md:text-[18px] text-[13px]">
+            It’s likely that if you’re reading this, you or someone you know is tired of the way your
+life is now. Addiction can take many forms and is often difficult to identify within oneself.
+You may benefit from treatment if you fit any of the following criteria:
+You’ve been unsuccessful in your attempts to quit on your own.
+It’s difficult to imagine how you will cope without drugs or alcohol.
+
+Your addiction has negatively affected areas in your life such as job, relationships, or
+health.
+The need for change is there, but you just don’t know where to start.
+You have experienced withdrawal symptoms when attempting to stop using.
+The goal of treatment extends further than being physically clean and sober. The real
+purpose is to help you create a life where you no longer feel the need to use drugs and
+alcohol.
+          </p>
+          
+        </div>
+        
+      </div>
+      <div data-aos="fade-up"  data-aos-once="true"  class="faq-item mx-auto container ">
+        
+        <div class="faq-text py-3" style=" border-top: 1px solid lightgreen;">
+          <h1  class="text-[15px] md:text-[20px] text flex items-center align-middle justify-between text-blue-400 font-bold pb-1">How long will I need treatment?
+            <div class="faq-symbol text-2xl font-bold text-blue-500 cursor-pointer">
+              <h3 class="cursor-pointer">&plus;</h3>
+          </div>
+          </h1>
+          <p  class="text-gray-500 md:text-[18px] text-[13px]">
+            One of the first things we emphasize in treating addiction is that every individual’s needs
+            are different. There is not a set period that applies to everyone when it comes to
+            treatment. Studies have found that those who spend three months or longer in
+            treatment programs have better rates of long-term sobriety. We offer individualized
+            treatment options depending on the need. When deciding how long to spend in
+            treatment, it is helpful to consult with a professional.
+          </p>
+          
+        </div>
+        
+      </div>
+      <div class="faq-item  mx-auto container " data-aos="fade-up"  data-aos-once="true" >
+     
+        <div class="faq-text py-3" style=" border-top: 1px solid lightgreen;">
+          <h1  class="text-[15px] md:text-[20px] text flex items-center align-middle justify-between text-blue-400 font-bold pb-1">I struggle with mental health issues such as anxiety and depression in addition to
+            my addiction. Am I able to receive the help I need?
+            <div class="faq-symbol text-2xl font-bold text-blue-500 cursor-pointer">
+              <h3 class="cursor-pointer">&plus;</h3>
+          </div>
+          </h1>
+          <p class="text-gray-500  md:text-[18px] text-[13px]">
+            The Substance Abuse and Mental Health Services Administration (SAMHSA) estimated
+that almost 8 million American adults battled both a mental health disorder and a
+substance use disorder, or co-occurring/dual diagnosis disorders. It is not uncommon
+for those struggling with addiction to also experience depression, anxiety, or trauma-
+related symptoms. In fact, many of our patients present with co-occurring or dual
+diagnosis conditions, which are addressed throughout treatment.
+          </p>
+          
+        </div>
+        
+      </div>
+      <div data-aos="fade-up"  data-aos-once="true" class="faq-item mx-auto container ">
+       
+        <div class="faq-text py-3" style=" border-top: 1px solid lightgreen;">
+          <h1 class="text-[15px] md:text-[20px] text flex items-center align-middle justify-between text-blue-400 font-bold pb-1">
+            Are PRP services voluntary?
+            <div class="faq-symbol text-2xl font-bold text-blue-500 cursor-pointer">
+              <h3 class="cursor-pointer">&plus;</h3>
+          </div>
+          </h1>
+          <p class="text-gray-500  md:text-[18px] text-[13px]">
+            Yes, all psych rehab services are voluntary, but a parent/ guardian may request that an
+            individual participate.
+          </p>
+          
+        </div>
+        
+      </div>
+      <div data-aos="fade-up"  data-aos-once="true" class="faq-item mx-auto container ">
+        
+        <div class="faq-text py-3" style=" border-top: 1px solid lightgreen;">
+          <h1 class="text-[15px] md:text-[20px] text flex items-center align-middle justify-between text-blue-400 font-bold pb-1">
+            How can I enroll in PRP?
+            <div class="faq-symbol text-2xl font-bold text-blue-500 cursor-pointer">
+              <h3 class="cursor-pointer">&plus;</h3>
+          </div>
+          </h1>
+          <p class="text-gray-500 md:text-[18px] text-[13px]">
+            You can enroll in PRP by seeing a therapist, psychiatrist, or other licensed mental
+            health professional and expressing interest in PRP services.
+          </p>
+          
+        </div>
+        
+      </div>
+      <div data-aos="fade-up"  data-aos-once="true" class="faq-item mx-auto container ">
+
+        <div class="faq-text py-3" style=" border-top: 1px solid lightgreen;">
+          <h1 class="text-[15px] md:text-[20px] text flex items-center align-middle justify-between text-blue-400 font-bold pb-1">
+            What are the benefits of PRP?
+            <div class="faq-symbol text-2xl font-bold text-blue-500 cursor-pointer">
+              <h3 class="cursor-pointer">&plus;</h3>
+          </div>
+          </h1>
+          <p class="text-gray-500  md:text-[18px] text-[13px]">
+            PRP can help people manage the challenges of mental illness and life skills, such as
+            understanding mental health disorders, medication management, and conflict
+            resolution, behavior management and academic achievement.
+          </p>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+     </main> 
+      <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+
+<footer class="bg-blue-950 text-gray-600 body-font" data-aos="zoom-in"  data-aos-once="true">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a href="{% url 'Onboarding:home' %}" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <img  class="rounded-[20px] w-[250px]" src="{% static 'images/mm logo.jpg' %}">
+    </a>
+    <p class="text-sm text-gray-200 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 flex flex-col justify-center align-items"> 
+
+      <h1 class="text-white pr-3 md:text-left text-center"> 606 Edmondson Ave Suite 200
+        <br>
+        <a href="mailto:meaningfulmindsllc@gmail.com">meaningfulmindsllc@gmail.com</a>
+        <br>
+        <a href="{% url 'Onboarding:home' %}">410-449-3988</a></h1>
+      
+      <br>
+      <img class=" mt-2 w-[80px] rounded-lg items-center align-middle justify-center " src="{% static 'images/IMG-20240903-WA0036(1).jpg' %}" alt="">
+    
+    </p>
+    
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center flex-col sm:justify-start">
+      <a href="mailto:meaningfulmindsllc@gmail.com" class="mt-2 mb-2 text-sm text-gray-200">meaningfulmindsllc</a>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a target="_blank" href="https://web.facebook.com/profile.php?id=100089789233240" class="text-gray-500 cursor-pointer">  
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a target="_blank" href="https://x.com/meaningful45835" class="ml-3 cursor-pointer text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a target="_blank"  href="https://www.instagram.com/meaningfulmindsllc/" class="ml-3 cursor-pointer text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+      </span>
+    </span>
+  </div>
+  <p class=" text-gray-400 p-2">
+   
+    <img src="{% static 'images/mmm partners logos.jpg' %}" alt="">
+  </p>
+</footer>
+ 
+
+      
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
+<script>
+ 
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqSymbols = document.querySelectorAll('.faq-symbol');
+    
+    faqSymbols.forEach(symbol => {
+      symbol.addEventListener('click', function() {
+        const faqText = this.closest('.faq-text');
+        const answer = faqText.querySelector('p');
+        const isExpanded = answer.classList.contains('show');
+
+        if (isExpanded) {
+          answer.classList.remove('show');
+          this.innerHTML = '&plus;';
+        } else {
+          answer.classList.add('show');
+          this.innerHTML = '&minus;';
+        }
+      });
+    });
+  });
+</script>
+
+
+    <script src="{% static 'js/app.js' %}?v=5"></script>
+</body>
+</html>
