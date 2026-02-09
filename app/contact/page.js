@@ -58,7 +58,7 @@ export default function Contact() {
                 <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
                     <span className="text-green-300 font-bold tracking-widest uppercase mb-4 block animate-fade-in-up">Get in Touch</span>
                     <h1 className="text-5xl md:text-6xl font-berkshire text-white mb-6 animate-fade-in-up delay-100">
-                        Top Rated Catonsville Therapist
+                        Meaningful Minds for a more meaningful you
                     </h1>
                     <p className="text-xl text-gray-200 leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-200 font-geist-sans">
                         We're here to listen. Whether you have questions or are ready to start your journey, reach out to us today.

@@ -69,13 +69,13 @@ function Footer() {
                             />
                         </div>
                         {/* CARF and other logos if available in mmm partners logos.jpg */}
-                        <div className="mt-4 bg-white p-2 rounded-lg flex items-center justify-center">
+                        {/* <div className="mt-4 bg-white p-2 rounded-lg flex items-center justify-center">
                             <img
                                 src="/images/mmm partners logos.jpg"
                                 alt="Accreditations including CARF"
                                 className="max-w-full h-auto max-h-20 object-contain"
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 

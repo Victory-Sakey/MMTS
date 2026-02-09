@@ -170,7 +170,7 @@ export default function Services() {
 
                                 <Link href="/contact" className={`inline-flex items-center ${program.color === 'green' ? 'text-green-600' : program.color === 'blue' ? 'text-blue-600' : 'text-purple-600'} font-bold hover:underline`}>
                                     Get Started
-                                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 ml-2" fill="n`one" stroke="`currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
                                 </Link>
@@ -275,7 +275,7 @@ export default function Services() {
             </section>
 
             {/* Medication Management */}
-            <section className="py-20 bg-gray-50">
+            {/* <section className="py-20 bg-gray-50">
                 <div className="max-w-5xl mx-auto px-4">
                     <div className="bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                         <div className="md:w-2/5 relative min-h-[300px]">
@@ -318,7 +318,7 @@ export default function Services() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 }
