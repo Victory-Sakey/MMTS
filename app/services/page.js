@@ -25,61 +25,62 @@ export default function Services() {
     }, []);
 
     const substancePrograms = [
-        {
-            id: "php",
-            title: "Partial Hospitalization Program",
-            subtitle: "Level II",
-            description: "This is an orientation and stabilization phase for clients starting ‘Substance Use
-                    Disorder’ care at Meaningful Minds. Clients receive education and information regarding
-                    symptoms, effects, and treatment of mental illness, medications, substance abuse, co-
-                    dependency and its effect on substance abuse treatment, the implementation of self-
-                    care. Services provide individual and group substance abuse counseling, education on
-                    the health consequences of substance abuse and dependence, and relapse prevention.
-                    PHP’s typically run approximately 6 hours a day, five days a week.",
-            color: "green",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-            )
-        },
-        {
-            id: "iop",
-            title: "Intensive Outpatient Program",
-            subtitle: "Level 2.1",
-            description: "Our Intensive Outpatient Program (also known as IOP) is designed to provide you with
+    {
+        id: "php",
+        title: "Partial Hospitalization Program",
+        subtitle: "Level II",
+        description: `This is an orientation and stabilization phase for clients starting ‘Substance Use
+Disorder’ care at Meaningful Minds. Clients receive education and information regarding
+symptoms, effects, and treatment of mental illness, medications, substance abuse, co-
+dependency and its effect on substance abuse treatment, the implementation of self-
+care. Services provide individual and group substance abuse counseling, education on
+the health consequences of substance abuse and dependence, and relapse prevention.
+PHP’s typically run approximately 6 hours a day, five days a week.`,
+        color: "green",
+        icon: (
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+        )
+    },
+    {
+        id: "iop",
+        title: "Intensive Outpatient Program",
+        subtitle: "Level 2.1",
+        description: `Our Intensive Outpatient Program (also known as IOP) is designed to provide you with
 the support you need as you begin steps towards independence. Whether you are
 stepping down from your treatment or entering IOP as your initial step, our team will
 create an individualized plan based around your needs during early recovery. IOP’s
-typically run approximately 3-6 hours each day for one to three days a week.",
-            color: "blue",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-            )
-        },
-        {
-            id: "op",
-            title: "Outpatient Program",
-            subtitle: "Level I",
-            description: "Outpatient therapy (also known as OP) is the least intensive program we offer. The
-                    outpatient treatment program provides regularly scheduled individual and group
-                    counseling. The program includes education on mental health issues, recovery and
-                    wellness. These comprehensive, coordinated, and defined services vary in the level of
-                    intensity dependent on the individual needs of the client seeking services. The
-                    outpatient program addresses a variety of needs, including, but not limited to, situational
-                    stressors, family relations, interpersonal relations, mental health issues, life span
-                    issues, psychiatric illnesses, addictions, and other traumas. OP’s typically run 3-4 hours
-                    a day, one to three days a week.",
-            color: "purple",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-            )
-        }
-    ];
+typically run approximately 3-6 hours each day for one to three days a week.`,
+        color: "blue",
+        icon: (
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+        )
+    },
+    {
+        id: "op",
+        title: "Outpatient Program",
+        subtitle: "Level I",
+        description: `Outpatient therapy (also known as OP) is the least intensive program we offer. The
+outpatient treatment program provides regularly scheduled individual and group
+counseling. The program includes education on mental health issues, recovery and
+wellness. These comprehensive, coordinated, and defined services vary in the level of
+intensity dependent on the individual needs of the client seeking services. The
+outpatient program addresses a variety of needs, including, but not limited to, situational
+stressors, family relations, interpersonal relations, mental health issues, life span
+issues, psychiatric illnesses, addictions, and other traumas. OP’s typically run 3-4 hours
+a day, one to three days a week.`,
+        color: "purple",
+        icon: (
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+        )
+    }
+];
+
 
     const allProgramsIncludes = [
         "Substance Use assessment & evaluation",
