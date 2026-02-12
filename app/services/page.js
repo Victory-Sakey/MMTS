@@ -29,7 +29,13 @@ export default function Services() {
             id: "php",
             title: "Partial Hospitalization Program",
             subtitle: "Level II",
-            description: "An intensive orientation and stabilization phase for clients starting Substance Use Disorder care. Clients receive comprehensive education on symptoms, effects, treatment of mental illness, and self-care strategies. This program typically runs 6 hours a day, 5 days a week.",
+            description: "This is an orientation and stabilization phase for clients starting ‘Substance Use
+                    Disorder’ care at Meaningful Minds. Clients receive education and information regarding
+                    symptoms, effects, and treatment of mental illness, medications, substance abuse, co-
+                    dependency and its effect on substance abuse treatment, the implementation of self-
+                    care. Services provide individual and group substance abuse counseling, education on
+                    the health consequences of substance abuse and dependence, and relapse prevention.
+                    PHP’s typically run approximately 6 hours a day, five days a week.",
             color: "green",
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,7 +47,11 @@ export default function Services() {
             id: "iop",
             title: "Intensive Outpatient Program",
             subtitle: "Level 2.1",
-            description: "Designed to provide support as you act steps towards independence. Whether stepping down from higher care or starting your journey, we create an individualized plan for early recovery. Typically runs 3-6 hours daily, 1-3 days a week.",
+            description: "Our Intensive Outpatient Program (also known as IOP) is designed to provide you with
+the support you need as you begin steps towards independence. Whether you are
+stepping down from your treatment or entering IOP as your initial step, our team will
+create an individualized plan based around your needs during early recovery. IOP’s
+typically run approximately 3-6 hours each day for one to three days a week.",
             color: "blue",
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,7 +63,15 @@ export default function Services() {
             id: "op",
             title: "Outpatient Program",
             subtitle: "Level I",
-            description: "Our least intensive option providing regularly scheduled individual and group counseling. Addresses a variety of needs from situational stressors to trauma and addictions. Typically runs 3-4 hours a day, 1-3 days a week.",
+            description: "Outpatient therapy (also known as OP) is the least intensive program we offer. The
+                    outpatient treatment program provides regularly scheduled individual and group
+                    counseling. The program includes education on mental health issues, recovery and
+                    wellness. These comprehensive, coordinated, and defined services vary in the level of
+                    intensity dependent on the individual needs of the client seeking services. The
+                    outpatient program addresses a variety of needs, including, but not limited to, situational
+                    stressors, family relations, interpersonal relations, mental health issues, life span
+                    issues, psychiatric illnesses, addictions, and other traumas. OP’s typically run 3-4 hours
+                    a day, one to three days a week.",
             color: "purple",
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
