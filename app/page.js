@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { FaHeart, FaComments } from "react-icons/fa";
 
@@ -53,17 +54,25 @@ The goal of treatment extends further than being physically clean and sober. The
       {/* Welcome Banner */}
       <section
         id="welcome-banner"
-        className="relative bg-cover bg-center bg-no-repeat py-32 md:py-40"
-        style={{
-          backgroundImage: "url('/images/people-meeting-support-group (1).jpg')",
-        }}
+        className="relative h-[60vh] md:h-[70vh] py-32 md:py-40 flex items-center justify-center overflow-hidden"
       >
+        <Image
+          src="/images/people-meeting-support-group (1).jpg"
+          alt="Hero Background"
+          fill
+          className="absolute inset-0 w-full h-full object-cover"
+          priority
+          quality={80}
+        />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 to-blue-900/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 to-blue-900/60 z-10" />
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-4 text-center flex flex-col items-center justify-center">
-          <h1 className="sm:text-5xl text-3xl font-bold text-white drop-shadow-lg mb-6">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 text-center flex flex-col items-center justify-center">
+          <h1 
+            className="sm:text-5xl text-3xl font-bold text-white drop-shadow-lg mb-6"
+            style={{ fontFamily: 'var(--font-dancing-script)' }}
+          >
             From Healing to <span className="text-blue-400 font-bold">Wholeness</span>
           </h1>
           <Link href="/contact">
@@ -78,7 +87,7 @@ The goal of treatment extends further than being physically clean and sober. The
       <section id="about-welcome">
         <div className="about mx-auto container flex flex-col md:justify-center lg:justify-evenly p-5 lg:p-2 xl:p-20">
           <div className="about-1 p-5 text-center justify-center align-middle items-center flex flex-col">
-            <h1 className="text-blue-500 text-5xl text-center pb-3 font-bold">Welcome!</h1>
+            <h1 className="text-blue-500 text-5xl text-center pb-3 font-bold font-dancing">Welcome!</h1>
             <p
               className="text-gray-950 text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-sans w-full font-bold uppercase text-center"
               style={{ letterSpacing: ".1rem", wordSpacing: ".1rem" }}

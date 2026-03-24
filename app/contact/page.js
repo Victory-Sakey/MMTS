@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { submitContactForm } from '@/lib/api';
 
 export default function Contact() {
@@ -46,16 +47,17 @@ export default function Contact() {
         <div className="contact-page bg-white min-h-screen">
             {/* Hero Section */}
             <section className="relative h-[40vh] min-h-[500px] flex items-center justify-center bg-green-900 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="/images/black-psychotherapist-taking-notes-session-with-her-patient.jpg"
-                        alt="Contact Background"
-                        className="w-full h-full object-cover opacity-30"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 to-blue-900/60"></div>
-                </div>
+                <Image
+                    src="/images/black-psychotherapist-taking-notes-session-with-her-patient.jpg"
+                    alt="Contact Background"
+                    fill
+                    className="absolute inset-0 w-full h-full object-cover opacity-30"
+                    priority
+                    quality={80}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 to-blue-900/60 z-10"></div>
 
-                <div className="relative z-10 max-w-4xl mx-auto px-4 text-left">
+                <div className="relative z-20 max-w-4xl mx-auto px-4 text-left">
                     <h1 className="font-mono text-4xl sm:text-7xl font-extrabold text-left text-white">
                         CONTACT <span className="text-blue-400">US</span>
                     </h1>

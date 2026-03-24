@@ -1,15 +1,25 @@
 @import "tailwindcss";
 
-@theme {
-  --font-geist-sans: var(--font-geist-sans);
-  --font-geist-mono: var(--font-geist-mono);
-  --font-berkshire: var(--font-berkshire-swash);
-  --font-dancing: var(--font-dancing-script);
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+/* Font utilities */
+.font-dancing {
+  font-family: var(--font-dancing-script);
+}
+
+.font-berkshire {
+  font-family: var(--font-berkshire-swash);
+}
+
+.font-geist-sans {
+  font-family: var(--font-geist-sans);
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
 }
 
 body {

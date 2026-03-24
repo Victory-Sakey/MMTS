@@ -1,20 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   return (
     <div className="about-page">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-gray-900 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/african-american-wheelchair-user.jpg"
-            alt="Background"
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
-        </div>
+        <Image
+          src="/images/african-american-wheelchair-user.jpg"
+          alt="About Background"
+          fill
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          priority
+          quality={80}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent z-10"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-left">
+        <div className="relative z-20 max-w-5xl mx-auto px-4 text-left">
           <h1 className="font-mono text-4xl sm:text-7xl font-extrabold text-left text-white">
             ABOUT <span className="text-blue-400">US</span>
           </h1>
@@ -27,11 +29,11 @@ export default function About() {
       <section className="lg:mt-10 mt-10">
         <div className="container mx-auto flex lg:flex-row flex-col bg-blue-200 lg:justify-evenly xl:p-20 p-5">
           <div className="p-5">
-            <h2 className="font-bold text-5xl text-blue-500 pb-5">
+            <h2 className="font-bold text-5xl text-blue-500 pb-5 font-dancing">
               Our Mission
             </h2>
             <p className="lg:w-[500px] text-gray-900 text-xl">
-    <b className="text-5xl">M</b>eaningful Minds Therapeutic Services is a change agent dedicated to improving the lives and social conditions for people with mental health, substance use and trauma-related challengesby promoting health, wellness and recovery in a meaningful way.
+              <b className="text-5xl">M</b>eaningful Minds Therapeutic Services is a change agent dedicated to improving the lives and social conditions for people with mental health, substance use and trauma-related challengesby promoting health, wellness and recovery in a meaningful way.
             </p>
 
             <Link href="/contact">
@@ -53,7 +55,7 @@ export default function About() {
         {/* Story Section */}
         <div className="container mx-auto flex md:flex-row-reverse flex-col lg:justify-evenly p-5">
           <div className="p-5">
-            <h2 className="text-5xl text-blue-500 pb-5 mt-12">
+            <h2 className="text-5xl text-blue-500 pb-5 mt-12 font-dancing">
               Our Story
             </h2>
 

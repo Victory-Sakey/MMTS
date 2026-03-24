@@ -20,6 +20,7 @@ const berkshireSwash = Berkshire_Swash({
 });
 
 const dancingScript = Dancing_Script({
+  weight: "400",
   variable: "--font-dancing-script",
   subsets: ["latin"],
 });
