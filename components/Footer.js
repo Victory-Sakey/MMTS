@@ -4,91 +4,48 @@ import Link from 'next/link';
 
 function Footer() {
     return (
-        <footer className="bg-gray-900 text-white pt-16 pb-8">
-            <div className="max-w-7xl mx-auto px-4">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                    {/* Brand Section */}
-                    <div>
-                        <div className="flex items-center mb-6">
-                            <img src="/images/mm logo.jpg" alt="MMTS Logo" className="w-12 h-12 rounded-full mr-3 border-2 border-white/20" />
-                            <span className="text-xl font-berkshire text-green-400">Meaningful Minds</span>
-                        </div>
-                        <p className="text-gray-400 mb-6 leading-relaxed">
-                            A change agent dedicated to improving lives through compassionate, evidence-based mental health care.
-                        </p>
-                        <div className="flex space-x-4">
-                            {/* Social Placeholders if needed */}
-                        </div>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-lg font-bold text-white mb-6 border-b border-gray-700 pb-2 inline-block">Quick Links</h4>
-                        <ul className="space-y-3">
-                            <li><Link href="/" className="text-gray-400 hover:text-green-400 transition-colors">Home</Link></li>
-                            <li><Link href="/about" className="text-gray-400 hover:text-green-400 transition-colors">About Us</Link></li>
-                            <li><Link href="/services" className="text-gray-400 hover:text-green-400 transition-colors">Services</Link></li>
-                            <li><Link href="/contact" className="text-gray-400 hover:text-green-400 transition-colors">Contact</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div>
-                        <h4 className="text-lg font-bold text-white mb-6 border-b border-gray-700 pb-2 inline-block">Contact Us</h4>
-                        <ul className="space-y-4">
-                            <li className="flex items-start">
-                                <svg className="w-5 h-5 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                                <span className="text-gray-400">606 Edmondson Ave Suite 200<br />Catonsville, MD 21228</span>
-                            </li>
-                            <li className="flex items-center">
-                                <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                                <a href="tel:410-449-3988" className="text-gray-400 hover:text-green-400 transition-colors">410-449-3988</a>
-                            </li>
-                            <li className="flex items-center">
-                                <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                <a href="mailto:meaningfulmindsllc@gmail.com" className="text-gray-400 hover:text-green-400 transition-colors break-words">meaningfulmindsllc@gmail.com</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Accreditations - Using Partners Image */}
-                    <div>
-                        <h4 className="text-lg font-bold text-white mb-6 border-b border-gray-700 pb-2 inline-block">Our Partners</h4>
-                        <div className="bg-white p-4 rounded-lg flex items-center justify-center">
-                            <img
-                                src="/images/partners_banner.png"
-                                alt="Our Partners: Circuit Court for Baltimore City, Addiction Wellness Center, University of Maryland, ALTA Healthcare"
-                                className="max-w-full h-auto"
-                            />
-                        </div>
-                        {/* CARF and other logos if available in mmm partners logos.jpg */}
-                        {/* <div className="mt-4 bg-white p-2 rounded-lg flex items-center justify-center">
-                            <img
-                                src="/images/mmm partners logos.jpg"
-                                alt="Accreditations including CARF"
-                                className="max-w-full h-auto max-h-20 object-contain"
-                            />
-                        </div> */}
-                    </div>
-                </div>
-
-                <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center bg-gray-900">
-                    <p className="text-gray-500 text-sm mb-4 md:mb-0">
-                        &copy; {new Date().getFullYear()} Meaningful Minds Therapeutic Services, LLC. All rights reserved.
+        <footer className="bg-blue-950 text-gray-600 body-font">
+            <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+                <Link href="/" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <img className="rounded-[20px] w-[250px]" src="/images/mm logo.jpg" alt="Meaningful Minds Logo" />
+                </Link>
+                <div className="text-sm text-gray-200 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 flex flex-col justify-center items-center">
+                    <p className="text-white pr-3 md:text-left text-center">
+                        606 Edmondson Ave Suite 200
+                        <br />
+                        <a href="mailto:meaningfulmindsllc@gmail.com" className="hover:text-green-400 transition-colors">meaningfulmindsllc@gmail.com</a>
+                        <br />
+                        <a href="tel:410-449-3988" className="hover:text-green-400 transition-colors">410-449-3988</a>
                     </p>
-                    <div className="flex space-x-6 text-sm text-gray-500">
-                        <Link href="/privacy" className="hover:text-green-400 transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-green-400 transition-colors">Terms of Service</Link>
-                    </div>
+                    <br />
+                    <img className="mt-2 w-[80px] rounded-lg items-center align-middle justify-center" src="/images/IMG-20240903-WA0036(1).jpg" alt="" />
                 </div>
+
+                <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center flex-col sm:justify-start">
+                    <a href="mailto:meaningfulmindsllc@gmail.com" className="mt-2 mb-2 text-sm text-gray-200 hover:text-green-400 transition-colors">meaningfulmindsllc</a>
+                    <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start space-x-4">
+                        <a target="_blank" href="https://web.facebook.com/profile.php?id=100089789233240" rel="noopener noreferrer" className="text-gray-500 hover:text-green-400 transition-colors cursor-pointer">
+                            <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a target="_blank" href="https://x.com/meaningful45835" rel="noopener noreferrer" className="text-gray-500 hover:text-green-400 transition-colors cursor-pointer">
+                            <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                            </svg>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/meaningfulmindsllc/" rel="noopener noreferrer" className="text-gray-500 hover:text-green-400 transition-colors cursor-pointer">
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                            </svg>
+                        </a>
+                    </span>
+                </span>
             </div>
+            <p className="text-gray-400 p-2">
+                <img src="/images/mmm partners logos.jpg" alt="Partners logos" />
+            </p>
         </footer>
     );
 }

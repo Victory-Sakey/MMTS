@@ -1,6 +1,53 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import { FaHeart, FaComments } from "react-icons/fa";
 
 export default function Home() {
+  const [openFAQ, setOpenFAQ] = useState(null);
+
+  const faqItems = [
+    {
+      id: 1,
+      question: "How do I know I need treatment?",
+      answer: `It's likely that if you're reading this, you or someone you know is tired of the way your life is now. Addiction can take many forms and is often difficult to identify within oneself.
+You may benefit from treatment if you fit any of the following criteria:
+You've been unsuccessful in your attempts to quit on your own.
+It's difficult to imagine how you will cope without drugs or alcohol.
+
+Your addiction has negatively affected areas in your life such as job, relationships, or health.
+The need for change is there, but you just don't know where to start.
+You have experienced withdrawal symptoms when attempting to stop using.
+The goal of treatment extends further than being physically clean and sober. The real purpose is to help you create a life where you no longer feel the need to use drugs and alcohol.`,
+    },
+    {
+      id: 2,
+      question: "How long will I need treatment?",
+      answer: `One of the first things we emphasize in treating addiction is that every individual's needs are different. There is not a set period that applies to everyone when it comes to treatment. Studies have found that those who spend three months or longer in treatment programs have better rates of long-term sobriety. We offer individualized treatment options depending on the need. When deciding how long to spend in treatment, it is helpful to consult with a professional.`,
+    },
+    {
+      id: 3,
+      question: "I struggle with mental health issues such as anxiety and depression in addition to my addiction. Am I able to receive the help I need?",
+      answer: `The Substance Abuse and Mental Health Services Administration (SAMHSA) estimated that almost 8 million American adults battled both a mental health disorder and a substance use disorder, or co-occurring/dual diagnosis disorders. It is not uncommon for those struggling with addiction to also experience depression, anxiety, or trauma-related symptoms. In fact, many of our patients present with co-occurring or dual diagnosis conditions, which are addressed throughout treatment.`,
+    },
+    {
+      id: 4,
+      question: "Are PRP services voluntary?",
+      answer: `Yes, all psych rehab services are voluntary, but a parent/ guardian may request that an individual participate.`,
+    },
+    {
+      id: 5,
+      question: "How can I enroll in PRP?",
+      answer: `You can enroll in PRP by seeing a therapist, psychiatrist, or other licensed mental health professional and expressing interest in PRP services.`,
+    },
+    {
+      id: 6,
+      question: "What are the benefits of PRP?",
+      answer: `PRP can help people manage the challenges of mental illness and life skills, such as understanding mental health disorders, medication management, and conflict resolution, behavior management and academic achievement.`,
+    },
+  ];
+
   return (
     <div className="home-page">
       {/* Welcome Banner */}
@@ -8,202 +55,163 @@ export default function Home() {
         id="welcome-banner"
         className="relative bg-cover bg-center bg-no-repeat py-32 md:py-40"
         style={{
-          backgroundImage: "url('/images/therapy-session-individual.jpg')",
+          backgroundImage: "url('/images/people-meeting-support-group (1).jpg')",
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-green-900/85 to-blue-900/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 to-blue-900/60" />
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-berkshire text-white mb-6 drop-shadow-lg animate-fade-in-up">
-            Welcome to Meaningful Mind Therapeutic Services
+        <div className="relative max-w-7xl mx-auto px-4 text-center flex flex-col items-center justify-center">
+          <h1 className="sm:text-5xl text-3xl font-bold text-white drop-shadow-lg mb-6">
+            From Healing to <span className="text-blue-400 font-bold">Wholeness</span>
           </h1>
-
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/95 max-w-4xl mx-auto leading-relaxed drop-shadow-md animate-fade-in-up delay-100">
-            Even the strongest people need a little bit of help to work through some of life’s most challenging problems.
-          </p>
-
-          <div className="mt-10 animate-fade-in-up delay-200">
-            <Link
-              href="/contact"
-              className="inline-block bg-white text-green-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 hover:scale-105 transition-all duration-300 shadow-xl"
-            >
-              Schedule Your Appointment
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            {/* Image */}
-            <div className="lg:w-1/2 relative">
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/images/authentic-scene-young-person-undergoing-psychological-therapy.jpg"
-                  alt="Therapy Session"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-full h-full bg-green-100 rounded-2xl -z-0" />
-            </div>
-
-            {/* Text */}
-            <div className="lg:w-1/2">
-              <h2 className="text-4xl md:text-5xl font-berkshire text-gray-800 mb-6">
-                From Healing to Wholeness
-              </h2>
-
-              <p className="text-lg text-gray-600 mb-6 font-geist-sans">
-                Here at Meaningful Minds Therapeutic Services, LLC, we tailor care to each individual, family, or group using evidence-based approaches.
-              </p>
-
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Compassionate, client-centered approach",
-                  "Evidence-based therapeutic techniques",
-                  "Safe and non-judgmental environment",
-                  "Personalized care plans",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                      ✓
-                    </span>
-                    <span className="text-gray-700 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                href="/about"
-                className="inline-flex items-center text-green-600 font-semibold hover:text-green-700"
-              >
-                Learn more about us →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Specialization Content */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-block bg-green-100 text-green-700 font-semibold px-4 py-1 rounded-full text-sm mb-6">
-            Compassionate & Professional
-          </div>
-          <h2 className="text-3xl md:text-5xl font-berkshire text-gray-800 mb-8 leading-tight">
-            Always put desire above fear
-          </h2>
-          <div className="text-lg text-gray-700 leading-relaxed space-y-6">
-            <p>
-              Our practice specializes in helping people who are struggling with addiction, social and life skills, or behavior management. If you are trying to navigate these areas of life, we’re confident that we have the experience to help you rediscover what brings happiness to your life.
-            </p>
-            <p>
-              Through therapy, there is always a way to address the issues you face and learn coping strategies to help you both right now and in the future. We can get you on track to leading a happier, more fulfilling life by equipping you with the tools you need to more efficiently and confidently manage life’s challenges.
-            </p>
-            <p className="font-semibold text-green-800 text-xl pt-2 font-berkshire">
-              It is never too late to start living the life you’ve always wanted.
-            </p>
-            <p>
-              If you’re interested in becoming a better, happier, more fulfilled you, get started by reaching out today!
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-berkshire text-gray-800 mb-4">
-              Our Services
-            </h2>
-            <p className="text-lg text-gray-600">
-              Comprehensive care for every stage of your journey.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* PHP */}
-            <ServiceCard
-              title="Partial Hospitalization Program (PHP)"
-              image="/images/IMG-20240919-WA0028.jpg"
-              href="/services#php"
-              color="green"
-            />
-
-            {/* IOP */}
-            <ServiceCard
-              title="Intensive Outpatient Program (IOP)"
-              image="/images/IMG-20240919-WA0037.jpg"
-              href="/services#iop"
-              color="blue"
-            />
-
-            {/* OP */}
-            <ServiceCard
-              title="Outpatient Program (OP)"
-              image="/images/IMG-20240919-WA0135.jpg"
-              href="/services#op"
-              color="purple"
-            />
-          </div>
-
-          <div className="mt-16 text-center">
-            <Link
-              href="/services"
-              className="inline-block border-2 border-green-600 text-green-700 px-8 py-3 rounded-full font-bold hover:bg-green-600 hover:text-white transition"
-            >
-              View All Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-green-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Start Your Journey?
-          </h2>
-          <p className="text-xl mb-8">
-            Contact us today to schedule your first appointment.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-          >
-            Get in Touch
+          <Link href="/contact">
+            <button className="bg-white text-green-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 hover:scale-105 transition-all duration-300 shadow-xl">
+              Get Started
+            </button>
           </Link>
         </div>
       </section>
-    </div>
-  );
-}
 
-/* Reusable Service Card */
-function ServiceCard({ title, image, href, color }) {
-  const colorClasses = {
-    green: "border-green-500 text-green-600",
-    blue: "border-blue-500 text-blue-600",
-    purple: "border-purple-500 text-purple-600",
-  };
+      {/* Welcome Section */}
+      <section id="about-welcome">
+        <div className="about mx-auto container flex flex-col md:justify-center lg:justify-evenly p-5 lg:p-2 xl:p-20">
+          <div className="about-1 p-5 text-center justify-center align-middle items-center flex flex-col">
+            <h1 className="text-blue-500 text-5xl text-center pb-3 font-bold">Welcome!</h1>
+            <p
+              className="text-gray-950 text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-sans w-full font-bold uppercase text-center"
+              style={{ letterSpacing: ".1rem", wordSpacing: ".1rem" }}
+            >
+              Even the strongest people need a little bit of help to work through some of life's most challenging problems. Everyone has hurdles to overcome, and we'd love to help you along the way.
+            </p>
+            <Link href="/services">
+              <button className="bg-blue-500 p-4 mt-8 w-[200px] text-white text-xs font-sans uppercase font-bold cursor-pointer hover:bg-blue-600 transition">
+                Our Services
+              </button>
+            </Link>
+          </div>
+          <div className="about-2 align-middle items-center justify-center p-5">
+            <p className="text-gray-500 font-sans text-[18px] w-full text-center">
+              <b className="text-5xl">H</b>ere at Meaningful Minds Therapeutic Services, LLC, we realize that no two people are the same, and we tailor our services to meet specific needs for individuals, family or groups. We love helping people understand the things that are holding them back and/or down with an in-depth approach. After recognizing underlying factors, clients can fully realize their strengths and adjust certain behaviors and thoughts to see things in a different, healthier way.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  return (
-    <div className={`bg-white rounded-2xl shadow-xl border-b-4 ${colorClasses[color].split(' ')[0]} overflow-hidden hover:scale-105 transition-transform duration-300`}>
-      <img src={image} alt={title} className="h-48 w-full object-cover" />
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-3">{title}</h3>
-        <Link
-          href={href}
-          className={`${colorClasses[color].split(' ')[1]} font-semibold hover:underline`}
-        >
-          Learn More →
-        </Link>
+      {/* Don't Wait Section */}
+      <section id="getting-started">
+        <h1 className="text-xl lg:text-2xl uppercase text-center text-gray-950 font-bold py-10">
+          Don't wait to get the help you need
+        </h1>
+        <div className="about mx-auto container flex lg:flex-row flex-col-reverse md:justify-center lg:justify-center p-5 lg:p-8 xl:p-20">
+          <div className="about-1 p-2 lg:p-5 lg:w-1/2 flex items-center justify-center">
+            <img
+              className="w-full h-auto object-cover"
+              src="/images/IMG-20240919-WA0033.jpg"
+              alt="Therapy Support"
+            />
+          </div>
+          <div className="about-2 p-2 lg:p-5 pb-4 lg:w-1/2">
+            <p className="text-gray-600 font-sans text-[18px] w-full text-left">
+              <b className="text-5xl">O</b>ur practice specializes in helping people who are struggling with addiction, social and life skills, or behavior management. If you are trying to navigate these areas of life, we're confident that we have the experience to help you rediscover what brings happiness to your life. Through therapy, there is always a way to address the issues you face and learn coping strategies to help you both right now and in the future.
+              <br />
+              <br />
+              Through therapy, we can get you on track to leading a happier, more fulfilling life by equipping you with the tools you need to more efficiently and confidently manage life's challenges.
+              <br />
+              <br />
+              It is never too late to start living the life you've always wanted.
+              <br />
+              <br />
+              If you're interested in becoming a better, happier, more fulfilled you, get started by reaching out today!
+            </p>
+            <div className="buttons mt-5 flex flex-col lg:flex-row gap-3 lg:gap-4">
+              <div className="button-1 p-4 items-center flex border-2 border-gray-200">
+                <FaHeart className="w-10 h-10 text-red-500 flex-shrink-0" />
+                <h1 className="pl-3 uppercase font-bold text-xs lg:text-sm leading-tight">Always put desire above fear</h1>
+              </div>
+              <div className="button-2 flex p-4 items-center border-2 border-gray-200">
+                <FaComments className="w-10 h-10 text-blue-500 flex-shrink-0" />
+                <h1 className="pl-3 uppercase font-bold text-xs lg:text-sm leading-tight">Compassionate & Professional</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rates & Insurance Section */}
+      <div className="overflow-hidden bg-white py-20 sm:pt-24 pb-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div className="lg:pr-8 lg:pt-4">
+              <div className="lg:max-w-lg">
+                <p className="rates mt-2 text-3xl font-bold tracking-tight text-blue-500 sm:text-4xl">
+                  Rates & Insurance
+                </p>
+                <p className="mt-6 text-lg leading-8 text-gray-600">
+                  Medicaid / Medical Assistance
+                  <br />
+                  Rates: Sliding scale offered
+                </p>
+                <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                  <div className="relative">
+                    <dt className="inline font-semibold text-green-900">Any Other Questions?</dt>
+                    <dd className="inline">
+                      {" "}
+                      Please contact us for any additional questions you may have. we look forward to hearing from you!
+                    </dd>
+                  </div>
+                  <Link href="/contact">
+                    <button className="bg-blue-500 p-4 mt-8 w-[200px] text-white text-xs font-sans uppercase font-bold hover:bg-green-900 cursor-pointer transition">
+                      Contact Us
+                    </button>
+                  </Link>
+                </dl>
+              </div>
+            </div>
+            <div>
+              <img
+                src="/images/2148363603.jpg"
+                alt="Therapy Services"
+                className="w-[28rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[37rem] md:-ml-4 lg:-ml-0"
+              />
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* FAQ Section */}
+      <section id="faq" className="bg-white">
+        <div className="faq container px-10 md:px-10 mx-auto pb-10">
+          <h1 className="text-4xl text-blue-500 font-bold pb-10">Frequently asked questions</h1>
+          <div className="faq-items mx-auto container space-y-0">
+            {faqItems.map((item) => (
+              <div key={item.id} className="faq-item border-t border-green-400">
+                <div 
+                  onClick={() => setOpenFAQ(openFAQ === item.id ? null : item.id)}
+                  className="py-4 px-2 cursor-pointer hover:bg-gray-50 transition"
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-[15px] md:text-[20px] text-blue-400 font-bold flex-1">
+                      {item.question}
+                    </h3>
+                    <span className={`text-2xl font-bold text-blue-500 transition transform flex-shrink-0 ml-4 ${openFAQ === item.id ? "rotate-45" : ""}`}>
+                      +
+                    </span>
+                  </div>
+                </div>
+                {openFAQ === item.id && (
+                  <div className="px-2 pb-4 bg-gray-50">
+                    <p className="text-gray-500 md:text-[18px] text-[13px] whitespace-pre-line">
+                      {item.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

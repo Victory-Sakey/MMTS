@@ -148,196 +148,216 @@ a day, one to three days a week.`,
                     <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-transparent to-gray-50"></div>
                 </div>
 
-                <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-                    <span className="text-green-400 font-bold tracking-widest uppercase mb-4 block animate-fade-in-up">Holistic Care</span>
-                    <h1 className="text-5xl md:text-7xl font-berkshire text-white mb-6 drop-shadow-lg animate-fade-in-up delay-100">
-                        Our Treatment Programs
+                <div className="relative z-10 max-w-5xl mx-auto px-4 text-left">
+                    <h1 className="font-mono text-4xl sm:text-7xl font-extrabold text-left text-white">
+                        SERVICES <span className="text-blue-400">& PROGRAMS</span>
                     </h1>
-                    <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto animate-fade-in-up delay-200 font-geist-sans">
-                        From intensive stabilization to ongoing support, we offer a continuum of care tailored to where you are in your journey.
-                    </p>
                 </div>
             </section>
 
-            {/* Substance Use Disorder Programs */}
-            <section className="py-20 max-w-7xl mx-auto px-4 -mt-20 relative z-20">
-                <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16">
+            {/* Services Overview Section */}
+            <section id="services" className="py-12 bg-gray-50">
+                <div className="container mx-auto px-4 lg:px-8">
+                    {/* Title Banner */}
                     <div className="text-center mb-16">
-                        <span className="text-green-600 font-bold uppercase tracking-wide text-sm">Recovery Journey</span>
-                        <h2 className="text-3xl md:text-4xl font-berkshire text-gray-800 mt-2">Substance Use Disorder Programs</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-blue-500">What We Do Here</h2>
                     </div>
 
-                    <div className="grid lg:grid-cols-3 gap-8">
-                        {substancePrograms.map((program, index) => (
-                            <div
-                                key={index}
-                                id={program.id}
-                                className={`group bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden`}
-                            >
-                                <div className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110 ${program.color === 'green' ? 'bg-green-50' : program.color === 'blue' ? 'bg-blue-50' : 'bg-purple-50'}`}></div>
-
-                                <div className={`relative z-10 inline-flex p-3 rounded-lg ${program.color === 'green' ? 'bg-green-100 text-green-600' : program.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-purple-100 text-purple-600'} mb-6`}>
-                                    {program.icon}
-                                </div>
-
-                                <h3 className="text-2xl font-bold text-gray-800 mb-1">{program.title}</h3>
-                                <p className={`${program.color === 'green' ? 'text-green-600' : program.color === 'blue' ? 'text-blue-600' : 'text-purple-600'} font-semibold text-sm uppercase tracking-wider mb-4`}>{program.subtitle}</p>
-
-                                <p className="text-gray-600 leading-relaxed text-sm mb-6 font-geist-sans">
-                                    {program.description}
+                    {/* Services Items */}
+                    <div className="space-y-12">
+                        {/* PHP */}
+                        <div className="flex flex-col md:flex-row gap-8 items-center bg-green-700 text-white px-6 md:px-16 lg:px-28 py-10 rounded-lg">
+                            <div className="md:w-2/3">
+                                <h3 className="text-2xl md:text-3xl font-bold text-green-500 mb-4">
+                                    Partial Hospitalization Program (PHP)-Level II
+                                </h3>
+                                <p className="text-sm md:text-base lg:text-lg leading-relaxed">
+                                    This is an orientation and stabilization phase for clients starting 'Substance Use Disorder' care at Meaningful Minds. Clients receive education and information regarding symptoms, effects, and treatment of mental illness, medications, substance abuse, co-dependency and its effect on substance abuse treatment, the implementation of self-care. Services provide individual and group substance abuse counseling, education on the health consequences of substance abuse and dependence, and relapse prevention. PHP's typically run approximately 6 hours a day, five days a week.
                                 </p>
-
-                                <Link href="/contact" className={`inline-flex items-center ${program.color === 'green' ? 'text-green-600' : program.color === 'blue' ? 'text-blue-600' : 'text-purple-600'} font-bold hover:underline`}>
-                                    Get Started
-                                    <svg className="w-4 h-4 ml-2" fill="n`one" stroke="`currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                    </svg>
-                                </Link>
                             </div>
-                        ))}
-                    </div>
-
-                    {/* Common Includes List */}
-                    <div className="mt-16 bg-gray-50 rounded-2xl p-8 md:p-10 border border-gray-100">
-                        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center justify-center">
-                            <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                            All Substance Use Programs Include:
-                            <span className="w-2 h-2 bg-green-500 rounded-full ml-3"></span>
-                        </h3>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            {allProgramsIncludes.map((item, index) => (
-                                <div key={index} className="flex items-center bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200">
-                                    <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                    </svg>
-                                    <span className="text-gray-700 text-sm font-medium">{item}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* PRP Section */}
-            <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <span className="text-blue-600 font-bold uppercase tracking-wide text-sm">Skill Building</span>
-                        <h2 className="text-3xl md:text-4xl font-berkshire text-gray-800 mt-2">Psychiatric Rehabilitation (PRP)</h2>
-                        <p className="text-gray-500 max-w-2xl mx-auto mt-4 font-geist-sans">Reducing functional impairments and developing skills for independence.</p>
-                    </div>
-
-                    <div className="space-y-24">
-                        {prp.map((program, index) => (
-                            <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-start`}>
-                                {/* Text Content */}
-                                <div className="lg:w-1/2">
-                                    <div className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase mb-4">
-                                        {program.audience}
-                                    </div>
-                                    <h3 className="text-3xl font-bold text-gray-800 mb-6">{program.title}</h3>
-                                    <p className="text-lg text-gray-600 mb-8 leading-relaxed border-l-4 border-blue-200 pl-4 font-geist-sans">
-                                        {program.description}
-                                    </p>
-
-                                    <div className="bg-gray-50 rounded-xl p-6">
-                                        <h4 className="font-bold text-gray-800 mb-4 flex items-center">
-                                            <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                            </svg>
-                                            Core Activities
-                                        </h4>
-                                        <div className="grid grid-cols-2 gap-3">
-                                            {program.activities.map((activity, idx) => (
-                                                <div key={idx} className="flex items-center text-sm text-gray-600 font-geist-sans">
-                                                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
-                                                    {activity}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Eligibility Card */}
-                                <div className="lg:w-1/2 w-full">
-                                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-3xl p-8 md:p-10 shadow-xl relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-16 -mt-16"></div>
-                                        <div className="relative z-10">
-                                            <h4 className="text-xl font-bold mb-6 flex items-center text-blue-300">
-                                                <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                                Eligibility Checklist
-                                            </h4>
-                                            <ul className="space-y-4">
-                                                {program.eligibility.map((req, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <svg className="w-5 h-5 text-green-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                                        </svg>
-                                                        <span className="text-gray-300 leading-snug font-geist-sans">{req}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                            <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-                                                <Link href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold text-sm transition-colors shadow-lg">
-                                                    Verify Eligibility
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Medication Management */}
-            {/* <section className="py-20 bg-gray-50">
-                <div className="max-w-5xl mx-auto px-4">
-                    <div className="bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-                        <div className="md:w-2/5 relative min-h-[300px]">
-                            <img
-                                src="/images/18557.jpg"
-                                alt="Medication Management"
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-green-900/60 flex items-center justify-center p-8">
-                                <div className="text-center text-white">
-                                    <svg className="w-16 h-16 mx-auto mb-4 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                                    </svg>
-                                    <h3 className="text-2xl font-berkshire">Medical Services</h3>
-                                </div>
+                            <div className="md:w-1/3 flex-shrink-0">
+                                <img className="w-full rounded-2xl" src="/images/black-psychotherapist-taking-notes-session-with-her-patient.jpg" alt="PHP Program" />
                             </div>
                         </div>
-                        <div className="md:w-3/5 p-10 md:p-14 bg-white">
-                            <h2 className="text-3xl font-bold text-gray-800 mb-6">Medication Management</h2>
-                            <p className="text-gray-600 mb-8 leading-relaxed font-geist-sans">
-                                For many clients, medication management is a vital tool for continuity of care.
-                                Our licensed medical professionals will work with you to:
-                            </p>
-                            <ul className="space-y-4 mb-8">
-                                {[
-                                    "Initiate or continue medications",
-                                    "Monitor dosage & efficacy",
-                                    "Ensure safety & compliance",
-                                    "Collaborate on care plans"
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-center text-gray-700 font-medium font-geist-sans">
-                                        <span className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 text-xs">✓</span>
-                                        {item}
-                                    </li>
-                                ))}
+
+                        {/* IOP */}
+                        <div className="flex flex-col md:flex-row-reverse gap-8 items-center px-6 md:px-16 lg:px-28 py-10">
+                            <div className="md:w-2/3">
+                                <h3 className="text-2xl md:text-3xl font-bold text-green-500 mb-4">
+                                    Intensive Outpatient (IOP)-Level 2.1
+                                </h3>
+                                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
+                                    Our Intensive Outpatient Program (also known as IOP) is designed to provide you with the support you need as you begin steps towards independence. Whether you are stepping down from your treatment or entering IOP as your initial step, our team will create an individualized plan based around your needs during early recovery. IOP's typically run approximately 3-6 hours each day for one to three days a week.
+                                </p>
+                            </div>
+                            <div className="md:w-1/3 flex-shrink-0">
+                                <img className="w-full rounded-2xl" src="/images/people-enjoying-each-others-company-dinner-party.jpg" alt="IOP Program" />
+                            </div>
+                        </div>
+
+                        {/* OP */}
+                        <div className="flex flex-col md:flex-row gap-8 items-center bg-green-700 text-white px-6 md:px-16 lg:px-28 py-16 rounded-lg">
+                            <div className="md:w-2/3">
+                                <h3 className="text-2xl md:text-3xl font-bold text-green-500 mb-4">
+                                    Outpatient Program (OP)-Level I
+                                </h3>
+                                <p className="text-sm md:text-base lg:text-lg leading-relaxed">
+                                    Outpatient therapy (also known as OP) is the least intensive program we offer. The outpatient treatment program provides regularly scheduled individual and group counseling. The program includes education on mental health issues, recovery and wellness. These comprehensive, coordinated, and defined services vary in the level of intensity dependent on the individual needs of the client seeking services. The outpatient program addresses a variety of needs, including, but not limited to, situational stressors, family relations, interpersonal relations, mental health issues, life span issues, psychiatric illnesses, addictions, and other traumas. OP's typically run 3-4 hours a day, one to three days a week.
+                                </p>
+                            </div>
+                            <div className="md:w-1/3 flex-shrink-0">
+                                <img className="w-full rounded-2xl" src="/images/IMG-20240919-WA0032.jpg" alt="OP Program" />
+                            </div>
+                        </div>
+
+                        {/* All Programs Includes */}
+                        <div className="px-6 md:px-16 lg:px-28 py-8 mt-4 text-gray-700">
+                            <h3 className="text-xl md:text-2xl font-bold text-green-950 mb-6">
+                                All Programs (PHP, IOP, and OP) Include:
+                            </h3>
+                            <ul className="space-y-3 text-sm md:text-base lg:text-lg">
+                                <li className="flex items-start">
+                                    <span className="text-green-600 font-bold mr-3">•</span>
+                                    <span>Substance Use assessment, evaluation, and consultation</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-green-600 font-bold mr-3">•</span>
+                                    <span>Group and individual counseling</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-green-600 font-bold mr-3">•</span>
+                                    <span>Medication monitoring and education</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-green-600 font-bold mr-3">•</span>
+                                    <span>Drug Testing and Reporting</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-green-600 font-bold mr-3">•</span>
+                                    <span>Discharge planning</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-green-600 font-bold mr-3">•</span>
+                                    <span>Light snacks and lunch</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-green-600 font-bold mr-3">•</span>
+                                    <span>Transportation to and from the program</span>
+                                </li>
                             </ul>
-                            <Link href="/contact" className="inline-block border-2 border-green-600 text-green-700 hover:bg-green-600 hover:text-white px-8 py-3 rounded-xl font-bold transition-all duration-300">
-                                Schedule Consultation
-                            </Link>
+                        </div>
+
+                        {/* Psychiatric Rehab Adults */}
+                        <div className="flex flex-col md:flex-row-reverse gap-8 items-start px-6 md:px-16 lg:px-28 py-10 mt-8">
+                            <div className="md:w-2/3">
+                                <h3 className="text-2xl md:text-3xl font-bold text-green-500 mb-4">
+                                    Psychiatric Rehabilitation Program-Adults
+                                </h3>
+                                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mb-6">
+                                    Psychiatric rehabilitation for adults is a comprehensive approach to helping individuals with mental illness to achieve their goals and lead fulfilling lives. The aim of psychiatric rehabilitation is to help individuals with mental illness to develop skills and strategies for managing their symptoms, improving their quality of life, and achieving their personal goals.
+                                </p>
+                                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mb-6">
+                                    Psychiatric rehabilitation programs typically involve a range of services, including social support, vocational training, resource linkage, skill building, and educational programs. The focus is on helping individuals to build a support system, develop coping strategies, and learn new skills that will enable them to function more effectively in their daily lives.
+                                </p>
+                                <p className="font-bold text-gray-800 mb-4">Individual & Group Rehabilitation Activities are designed to reduce functional behavioral impairments and develop and/or restore skills in a variety of areas, including:</p>
+                                <ul className="space-y-2 text-sm md:text-base text-gray-700 ml-4">
+                                    <li>• Self-Care Skills</li>
+                                    <li>• Independent Living Skills</li>
+                                    <li>• Social/Interactive Skills</li>
+                                    <li>• Anger Management Skills</li>
+                                    <li>• Employment goals</li>
+                                    <li>• Symptom Management</li>
+                                    <li>• Accessing Community Resources</li>
+                                    <li>• Personal Safety</li>
+                                    <li>• Maintaining Boundaries</li>
+                                </ul>
+                                <p className="font-bold text-gray-800 mt-6 mb-4">To Meet Eligibility Requirements An Individual Must Be:</p>
+                                <ul className="space-y-2 text-sm md:text-base text-gray-700 ml-4">
+                                    <li>• 18 or older</li>
+                                    <li>• Actively participating in mental health treatment</li>
+                                    <li>• Referred by a Licensed Mental Health Professional</li>
+                                    <li>• Diagnosed with a qualified behavioral health diagnosis</li>
+                                    <li>• Willing to participate in Psychiatric Rehabilitation Program services</li>
+                                    <li>• A Medical Assistance recipient</li>
+                                </ul>
+                            </div>
+                            <div className="md:w-1/3 flex-shrink-0">
+                                <img className="w-full rounded-2xl" src="/images/IMG-20240919-WA0135.jpg" alt="Adult PRP" />
+                            </div>
+                        </div>
+
+                        {/* Psychiatric Rehab Minors */}
+                        <div className="flex flex-col md:flex-row gap-8 items-start bg-green-700 text-white px-6 md:px-16 lg:px-28 py-16 rounded-lg">
+                            <div className="md:w-2/3">
+                                <h3 className="text-2xl md:text-3xl font-bold text-green-500 mb-4">
+                                    Psychiatric Rehabilitation Program-Minors
+                                </h3>
+                                <p className="text-sm md:text-base lg:text-lg leading-relaxed mb-6">
+                                    Psychiatric Rehabilitation Program for Children and Adolescents are designed to complement, support and strengthen the mental health (Therapy and Psychiatry) services the child is already receiving. Trained rehabilitation staff provide a combination of individual and group rehabilitation activities at the child's home and/or other appropriate community locations.
+                                </p>
+                                <p className="text-sm md:text-base lg:text-lg leading-relaxed mb-6">
+                                    On Site (facility-based) and Off Site (community-based) services are family focused, individualized and based on the child's and the family's strengths and resilience. Specific rehabilitation goals are established, which target identified needs based on information from the referring mental health professional, a comprehensive assessment and meetings with the child and his/her family.
+                                </p>
+                                <p className="text-sm md:text-base lg:text-lg leading-relaxed mb-6">
+                                    PRP staff routinely evaluate progress with each child and their parent/guardian/support team and provide monthly summary reports to the primary therapist and other mental health professionals working with the child.
+                                </p>
+                                <p className="font-bold mb-4">Individual & Group Rehabilitation Activities are designed to reduce functional behavioral impairments and develop and/or restore age-appropriate skills in a variety of areas, including:</p>
+                                <ul className="space-y-2 text-sm md:text-base ml-4">
+                                    <li>• Self Care Skills</li>
+                                    <li>• Semi-Independent Living Skills</li>
+                                    <li>• Social/Interactive Skills</li>
+                                    <li>• Anger Management Skills</li>
+                                    <li>• Symptom Management</li>
+                                    <li>• Accessing Community Resources</li>
+                                    <li>• Personal Safety</li>
+                                    <li>• Maintaining Age-Appropriate Boundaries</li>
+                                    <li>• Time Management</li>
+                                </ul>
+                                <p className="font-bold mt-6 mb-4">To Meet Eligibility Requirements A Child Must Be:</p>
+                                <ul className="space-y-2 text-sm md:text-base ml-4">
+                                    <li>• 5 – 17 years old</li>
+                                    <li>• Actively participating in mental health treatment</li>
+                                    <li>• Referred by a Licensed Mental Health Professional</li>
+                                    <li>• Diagnosed with a behavioral health diagnosis</li>
+                                    <li>• Willing to participate in Psychiatric Rehabilitation Program services</li>
+                                    <li>• A Medical Assistance recipient</li>
+                                </ul>
+                            </div>
+                            <div className="md:w-1/3 flex-shrink-0">
+                                <img className="w-full rounded-2xl" src="/images/IMG-20240919-WA0028.jpg" alt="Youth PRP" />
+                            </div>
+                        </div>
+
+                        {/* Medication Management */}
+                        <div className="flex flex-col md:flex-row-reverse gap-8 items-start px-6 md:px-16 lg:px-28 py-10 mt-8">
+                            <div className="md:w-2/3">
+                                <h3 className="text-2xl md:text-3xl font-bold text-green-500 mb-4">
+                                    Medication Management
+                                </h3>
+                                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mb-6">
+                                    For many clients with mental health or co-occurring disorders, medication management may be a necessary tool for continuity of care.
+                                </p>
+                                <p className="font-bold text-gray-800 mb-4">Clients in this program work with a licensed medical professional that can help:</p>
+                                <ul className="space-y-2 text-sm md:text-base text-gray-700 ml-4 mb-6">
+                                    <li>• Initiate medications for new clients</li>
+                                    <li>• Provide continuation of ongoing medications</li>
+                                    <li>• Ensure clients are following their medication regimen</li>
+                                    <li>• Monitor dosage and efficacy of medications</li>
+                                    <li>• Develop an individualized plan of care in conjunction with clients and other behavioral health professionals</li>
+                                </ul>
+                                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
+                                    More importantly, our medication management services help individuals improve their quality of life. To learn more about medication management or other treatment programs, please contact Meaningful Minds Therapeutic Services today.
+                                </p>
+                            </div>
+                            <div className="md:w-1/3 flex-shrink-0">
+                                <img className="w-full rounded-2xl" src="/images/people-drinking-kombucha-gathering.jpg" alt="Medication Management" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
+
+        
         </div>
     );
 }

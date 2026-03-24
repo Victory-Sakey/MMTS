@@ -45,31 +45,28 @@ export default function Contact() {
     return (
         <div className="contact-page bg-white min-h-screen">
             {/* Hero Section */}
-            <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center bg-green-900 overflow-hidden">
+            <section className="relative h-[40vh] min-h-[500px] flex items-center justify-center bg-green-900 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/images/18593.jpg"
+                        src="/images/black-psychotherapist-taking-notes-session-with-her-patient.jpg"
                         alt="Contact Background"
                         className="w-full h-full object-cover opacity-30"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-blue-900/80"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 to-blue-900/60"></div>
                 </div>
 
-                <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-                    <span className="text-green-300 font-bold tracking-widest uppercase mb-4 block animate-fade-in-up">Get in Touch</span>
-                    <h1 className="text-5xl md:text-6xl font-berkshire text-white mb-6 animate-fade-in-up delay-100">
-                        Meaningful Minds for a more meaningful you
+                <div className="relative z-10 max-w-4xl mx-auto px-4 text-left">
+                    <h1 className="font-mono text-4xl sm:text-7xl font-extrabold text-left text-white">
+                        CONTACT <span className="text-blue-400">US</span>
                     </h1>
-                    <p className="text-xl text-gray-200 leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-200 font-geist-sans">
-                        We're here to listen. Whether you have questions or are ready to start your journey, reach out to us today.
-                    </p>
+                   
                 </div>
             </section>
 
             <section className="py-20 max-w-7xl mx-auto px-4">
-                <div className="flex flex-col lg:flex-row gap-16 lg:items-start">
+                <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 md:items-start">
                     {/* Contact Info Column */}
-                    <div className="lg:w-1/3 space-y-8">
+                    <div className="md:w-1/2 space-y-8">
                         <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-green-500 transform hover:-translate-y-1 transition-transform duration-300">
                             <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
                                 <span className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3 text-green-600">
@@ -118,24 +115,10 @@ export default function Contact() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Crisis Card */}
-                        <div className="bg-blue-600 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16"></div>
-                            <h4 className="text-xl font-bold mb-4 flex items-center">
-                                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                </svg>
-                                In a Crisis?
-                            </h4>
-                            <p className="mb-6 text-blue-100 leading-relaxed font-geist-sans">
-                                If you are experiencing a life-threatening emergency, please call <strong>911</strong> or the National Suicide Prevention Lifeline at <strong>988</strong> immediately.
-                            </p>
-                        </div>
                     </div>
 
                     {/* Form Column */}
-                    <div className="lg:w-2/3">
+                    <div className="md:w-1/2">
                         <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
                             <h2 className="text-3xl font-berkshire text-gray-800 mb-2">Send us a Message</h2>
                             <p className="text-gray-500 mb-10 font-geist-sans">Fill out the form below and our team will get back to you within 24-48 hours.</p>
