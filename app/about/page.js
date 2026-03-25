@@ -46,7 +46,7 @@ export default function About() {
           <div className="p-5">
             <img
               className="w-full rounded-[50px]"
-              src="/images/9953.jpg"
+              src="/images/people-meeting-support-group.jpg"
               alt="Our Mission"
             />
           </div>

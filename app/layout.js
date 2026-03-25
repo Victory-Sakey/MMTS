@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Berkshire_Swash, Dancing_Script } from "next/font/go
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AdPopup from "@/components/AdPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <AdPopup />
       </body>
     </html>
   );

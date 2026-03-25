@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Services() {
@@ -140,10 +141,11 @@ a day, one to three days a week.`,
             {/* Hero Section */}
             <section className="relative h-[50vh] min-h-[500px] flex items-center justify-center bg-gray-900 overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <Image
                         src="/images/47250.jpg"
                         alt="Services Background"
-                        className="w-full h-full object-cover opacity-30"
+                        fill
+                        className="object-cover opacity-30"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-transparent to-gray-50"></div>
                 </div>
@@ -176,7 +178,13 @@ a day, one to three days a week.`,
                                 </p>
                             </div>
                             <div className="md:w-1/3 flex-shrink-0">
-                                <img className="w-full rounded-2xl" src="/images/black-psychotherapist-taking-notes-session-with-her-patient.jpg" alt="PHP Program" />
+                                <Image 
+                                    className="w-full rounded-2xl" 
+                                    src="/images/black-psychotherapist-taking-notes-session-with-her-patient.jpg" 
+                                    alt="PHP Program"
+                                    width={400}
+                                    height={300}
+                                />
                             </div>
                         </div>
 
@@ -191,7 +199,13 @@ a day, one to three days a week.`,
                                 </p>
                             </div>
                             <div className="md:w-1/3 flex-shrink-0">
-                                <img className="w-full rounded-2xl" src="/images/people-enjoying-each-others-company-dinner-party.jpg" alt="IOP Program" />
+                                <Image 
+                                    className="w-full rounded-2xl" 
+                                    src="/images/people-enjoying-each-others-company-dinner-party.jpg" 
+                                    alt="IOP Program"
+                                    width={400}
+                                    height={300}
+                                />
                             </div>
                         </div>
 
@@ -206,7 +220,13 @@ a day, one to three days a week.`,
                                 </p>
                             </div>
                             <div className="md:w-1/3 flex-shrink-0">
-                                <img className="w-full rounded-2xl" src="/images/IMG-20240919-WA0032.jpg" alt="OP Program" />
+                                <Image 
+                                    className="w-full rounded-2xl" 
+                                    src="/images/IMG-20240919-WA0032.jpg" 
+                                    alt="OP Program"
+                                    width={400}
+                                    height={300}
+                                />
                             </div>
                         </div>
 
@@ -282,7 +302,13 @@ a day, one to three days a week.`,
                                 </ul>
                             </div>
                             <div className="md:w-1/3 flex-shrink-0">
-                                <img className="w-full rounded-2xl" src="/images/IMG-20240919-WA0135.jpg" alt="Adult PRP" />
+                                <Image 
+                                    className="w-full rounded-2xl" 
+                                    src="/images/IMG-20240919-WA0135.jpg" 
+                                    alt="Adult PRP"
+                                    width={400}
+                                    height={300}
+                                />
                             </div>
                         </div>
 
@@ -324,7 +350,13 @@ a day, one to three days a week.`,
                                 </ul>
                             </div>
                             <div className="md:w-1/3 flex-shrink-0">
-                                <img className="w-full rounded-2xl" src="/images/IMG-20240919-WA0028.jpg" alt="Youth PRP" />
+                                <Image 
+                                    className="w-full rounded-2xl" 
+                                    src="/images/IMG-20240919-WA0028.jpg" 
+                                    alt="Youth PRP"
+                                    width={400}
+                                    height={300}
+                                />
                             </div>
                         </div>
 
@@ -350,7 +382,13 @@ a day, one to three days a week.`,
                                 </p>
                             </div>
                             <div className="md:w-1/3 flex-shrink-0">
-                                <img className="w-full rounded-2xl" src="/images/people-drinking-kombucha-gathering.jpg" alt="Medication Management" />
+                                <Image 
+                                    className="w-full rounded-2xl" 
+                                    src="/images/people-drinking-kombucha-gathering.jpg" 
+                                    alt="Medication Management"
+                                    width={400}
+                                    height={300}
+                                />
                             </div>
                         </div>
                     </div>
