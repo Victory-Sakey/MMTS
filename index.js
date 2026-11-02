@@ -9,14 +9,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Serve static files
-app.use(express.static(path.join(__dirname, "build"))); // CRA
-// app.use(express.static(path.join(__dirname, "dist"))); // Vite
+// Serve the Vite build output
+app.use(express.static(path.join(__dirname, "dist")));
 
-// SPA fallback for React Router
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-  // res.sendFile(path.join(__dirname, "dist", "index.html")); // Vite
+// SPA fallback for React Router (Express 5 needs a named wildcard)
+app.get("/{*splat}", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 app.listen(PORT, () => {

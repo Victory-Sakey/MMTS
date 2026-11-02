@@ -59,3 +59,20 @@ body {
 .animate-fade-in {
   animation: fadeIn 1s ease-out forwards;
 }
+
+.animate-fade-in-up {
+  animation: fadeIn 0.8s ease-out both;
+}
+
+/* Stagger the hero text. Tailwind's own delay-* only affects transitions. */
+.animate-fade-in-up.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-fade-in-up.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-fade-in-up.delay-300 {
+  animation-delay: 0.3s;
+}

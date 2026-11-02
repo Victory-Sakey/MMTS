@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://mmts-daph.onrender.com/api';
+// Set VITE_API_URL=/api in .env.local to use the local Django server through the Vite proxy.
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://mmts-daph.onrender.com/api';
 
 const api = axios.create({
     baseURL: API_BASE_URL,

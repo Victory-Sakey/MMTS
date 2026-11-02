@@ -17,7 +17,7 @@ function Home() {
                 {/* Content */}
                 <div className="relative max-w-7xl mx-auto px-4 text-center">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-berkshire text-white mb-6 drop-shadow-lg">
-                        Welcome to Meaningful Mind Therapeutic Services
+                        Welcome to Meaningful Minds Therapeutic Services
                     </h1>
 
                     <p className="text-xl md:text-2xl lg:text-3xl text-white/95 max-w-4xl mx-auto leading-relaxed drop-shadow-md">

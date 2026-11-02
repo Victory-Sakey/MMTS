@@ -41,7 +41,7 @@ function Services() {
             id: "iop",
             title: "Intensive Outpatient Program",
             subtitle: "Level 2.1",
-            description: "Designed to provide support as you act steps towards independence. Whether stepping down from higher care or starting your journey, we create an individualized plan for early recovery. Typically runs 3-6 hours daily, 1-3 days a week.",
+            description: "Designed to provide support as you take steps towards independence. Whether stepping down from higher care or starting your journey, we create an individualized plan for early recovery. Typically runs 3-6 hours daily, 1-3 days a week.",
             color: "blue",
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

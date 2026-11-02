@@ -212,7 +212,8 @@ function Contact() {
                                             Phone Number
                                         </label>
                                         <input
-                                            type="number"
+                                            type="tel"
+                                            autoComplete="tel"
                                             id="number"
                                             name="number"
                                             value={formData.number}
